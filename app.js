@@ -13,7 +13,6 @@
   const weekCounter = document.getElementById('weekCounter');
   const summary = document.getElementById('summary');
   const schedule = document.getElementById('schedule');
-  const ppChecked = document.getElementById('ppChecked');
   const stadiumChecked = document.getElementById('stadiumChecked');
 
   function parseDate(dateString) {
@@ -89,17 +88,31 @@
     return data.londonStadium.events.filter(event => event.date === date && event.status !== 'cancelled');
   }
 
-  function basisBadge(performance) {
-    if (performance.listingStatus === 'review') {
-      return '<span class="source-badge review">Check advised</span>';
+  function esc(value) {
+    return String(value ?? '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  function timeText(performance) {
+    if (performance.times?.length) return performance.times.join(' · ');
+    if (performance.note) return 'Special event · Time TBC';
+    return 'Time TBC';
+  }
+
+  function stadiumMarkup(events) {
+    if (!events.length) {
+      return '<div class="stadium-clear"><span class="state-icon">✓</span><span>No Stadium event</span></div>';
     }
-    if (performance.basis === 'live-ticketing') {
-      return '<span class="source-badge live">Live listing</span>';
-    }
-    if (performance.basis === 'official-opening-schedule') {
-      return '<span class="source-badge">Published schedule</span>';
-    }
-    return '<span class="source-badge">Regular pattern</span>';
+
+    return `<div class="stadium-clashes">${events.map(event => `
+      <div class="stadium-clash">
+        <span class="state-icon">!</span>
+        <span class="stadium-copy"><strong>${esc(event.name)}</strong><span>${event.time ? esc(event.time) : 'Time TBC'}</span></span>
+      </div>`).join('')}</div>`;
   }
 
   function render() {
@@ -112,75 +125,53 @@
     weekLabel.textContent = weekIndex === 0 ? 'Opening week' : `Week ${weekIndex + 1}`;
     weekRange.textContent = rangeText(week.start, week.end);
     weekCounter.textContent = `Week ${weekIndex + 1} of ${weeks.length}`;
-
     prevButton.hidden = weekIndex === 0;
     nextButton.hidden = weekIndex === weeks.length - 1;
 
+    const clashDays = new Set(clashes.map(item => item.performance.date)).size;
     if (!performances.length) {
-      summary.className = 'summary-card empty';
-      summary.innerHTML = '<div class="summary-main"><span class="summary-dot"></span><span>No Phantom Peak performances are currently listed this week</span></div>';
-    } else if (clashes.length) {
-      const days = new Set(clashes.map(item => item.performance.date)).size;
-      summary.className = 'summary-card clash';
-      summary.innerHTML = `<div class="summary-main"><span class="summary-dot"></span><span>${days} Phantom Peak ${days === 1 ? 'day has' : 'days have'} a same-day London Stadium event</span></div><p class="summary-sub">The affected ${days === 1 ? 'day is' : 'days are'} highlighted below. Expect heavier crowds and transport demand around Stratford.</p>`;
+      summary.className = 'summary-card neutral';
+      summary.innerHTML = '<span class="summary-icon">•</span><span>No Phantom Peak performances currently listed this week.</span>';
+    } else if (clashDays) {
+      summary.className = 'summary-card busy';
+      summary.innerHTML = `<span class="summary-icon">!</span><span><strong>${clashDays} busy ${clashDays === 1 ? 'day' : 'days'}</strong> this week — allow extra Stratford travel time.</span>`;
     } else {
-      summary.className = 'summary-card safe';
-      summary.innerHTML = '<div class="summary-main"><span class="summary-dot"></span><span>No London Stadium event currently coincides with a Phantom Peak performance this week</span></div>';
+      summary.className = 'summary-card clear';
+      summary.innerHTML = '<span class="summary-icon">✓</span><span><strong>Clear week:</strong> no same-day London Stadium events currently listed.</span>';
     }
 
     schedule.replaceChildren();
+    schedule.dataset.count = String(performances.length);
 
     if (!performances.length) {
       const empty = document.createElement('div');
       empty.className = 'empty-week';
-      empty.textContent = 'Nothing to compare this week yet. Use Previous week or Next week to continue browsing.';
+      empty.textContent = 'Use Previous or Next to browse another week.';
       schedule.appendChild(empty);
       return;
     }
 
     performances.forEach(performance => {
       const parts = dateParts(performance.date);
-      const stadiumEvents = stadiumFor(performance.date);
+      const events = stadiumFor(performance.date);
       const needsReview = performance.listingStatus === 'review';
-      const card = document.createElement('article');
-      card.className = `day-card${stadiumEvents.length ? ' has-clash' : ''}${needsReview ? ' needs-review' : ''}`;
+      const row = document.createElement('article');
+      row.className = `day-row${events.length ? ' has-clash' : ''}${needsReview ? ' needs-review' : ''}`;
 
-      const times = performance.times?.length
-        ? `<div class="show-times">${performance.times.map(time => `<span class="time-pill">${time}</span>`).join('')}</div>`
-        : '';
-
-      const special = performance.note ? `<div class="special-note">${performance.note}</div>` : '';
-      const review = needsReview
-        ? '<div class="review-note"><strong>Ticket listing changed.</strong> This performance is being retained because a missing sales slot can mean sold out rather than cancelled. Check the official ticket page before relying on the time.</div>'
-        : '';
-
-      const stadium = stadiumEvents.length
-        ? stadiumEvents.map(event => `
-          <div class="stadium-event">
-            <div class="status-label">! London Stadium same day</div>
-            <div class="stadium-name">${event.name}</div>
-            <div class="stadium-time">${event.time ? `Starts ${event.time}` : 'Time TBC'}</div>
-          </div>`).join('')
-        : '<div class="no-stadium">✓ No London Stadium event listed for this date</div>';
-
-      card.innerHTML = `
-        <div class="date-block">
-          <div class="date-day">${parts.day}</div>
-          <div class="date-month">${parts.month}</div>
-          <div class="date-weekday">${parts.weekday}</div>
+      row.innerHTML = `
+        <div class="date-chip">
+          <span class="date-weekday">${esc(parts.weekday)}</span>
+          <strong>${esc(parts.day)}</strong>
+          <span>${esc(parts.month)}</span>
         </div>
-        <div class="day-content">
-          <div class="day-heading-row">
-            <h3 class="day-title">Phantom Peak</h3>
-            ${basisBadge(performance)}
-          </div>
-          ${times}
-          ${special}
-          ${review}
-          ${stadium}
-        </div>`;
+        <div class="pp-slot">
+          <div class="pp-name">Phantom Peak${needsReview ? ' <span class="review-mark" title="Ticket listing needs checking">?</span>' : ''}</div>
+          <div class="pp-time">${esc(timeText(performance))}</div>
+          ${performance.note ? `<div class="pp-note">${esc(performance.note)}</div>` : ''}
+        </div>
+        <div class="stadium-slot">${stadiumMarkup(events)}</div>`;
 
-      schedule.appendChild(card);
+      schedule.appendChild(row);
     });
   }
 
@@ -188,7 +179,6 @@
     if (weekIndex > 0) {
       weekIndex -= 1;
       render();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
 
@@ -196,11 +186,10 @@
     if (weekIndex < weeks.length - 1) {
       weekIndex += 1;
       render();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   });
 
-  ppChecked.textContent = `Phantom Peak schedule checked: ${data.phantomPeak.lastChecked || 'not yet live-synced'}.`;
-  stadiumChecked.textContent = `London Stadium checked: ${data.londonStadium.lastChecked || 'seed data'}.`;
+  const checkedText = data.londonStadium.lastChecked || 'seed data';
+  stadiumChecked.textContent = `Stadium: ${checkedText}`;
   render();
 })();

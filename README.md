@@ -158,3 +158,6 @@ Do not change the outer `window.CALENDAR_DATA =` wrapper unless you also change 
 # Notes
 
 This is an independent planning tool and is not an official Phantom Peak or London Stadium service. Events can change at short notice, so users should still check their ticket and official venue information before travelling.
+
+## Display layout
+The site uses a single-page week view inside the illustrated parchment panel. There is no internal content scrolling: Previous/Next changes the whole week, and the busiest six-date week is automatically compressed to fit the panel on phone and laptop layouts.
