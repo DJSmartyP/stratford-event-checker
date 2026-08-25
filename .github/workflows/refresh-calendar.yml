@@ -1,0 +1,62 @@
+name: Refresh Stratford calendars
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install Chromium for Phantom Peak ticket check
+        run: playwright install --with-deps chromium
+
+      - name: Refresh both calendars
+        id: refresh
+        continue-on-error: true
+        run: python scripts/update_data.py
+
+      - name: Upload Phantom Peak diagnostics when available
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phantom-peak-scan-diagnostics
+          path: diagnostics/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Commit refreshed data
+        run: |
+          if git diff --quiet -- schedule-data.js; then
+            echo "No calendar data changes to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add schedule-data.js
+          git commit -m "Refresh Stratford calendar data"
+          git push
+
+      - name: Report refresh failure
+        if: steps.refresh.outcome == 'failure'
+        run: |
+          echo "Calendar refresh encountered an error. Existing published data was left in place where possible."
+          exit 1
