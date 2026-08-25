@@ -3,44 +3,69 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#3f086f">
+  <meta name="theme-color" content="#4d087d">
   <meta name="description" content="PPEC Stratford Crowd Checker: compare Phantom Peak performances with London Stadium events.">
   <title>PPEC Stratford Crowd Checker</title>
   <link rel="icon" type="image/png" href="assets/ppec-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Rye&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="frame-stage" aria-label="PPEC Stratford Crowd Checker">
-    <section class="frame-panel">
-      <div class="panel-page">
-        <header class="panel-header">
-          <div>
-            <p class="eyebrow">PPEC STRATFORD</p>
-            <h1>Crowd Checker</h1>
-          </div>
-          <div class="live-note">PP × London Stadium</div>
-        </header>
+  <div class="site-topline" aria-hidden="true"></div>
 
-        <section class="week-picker" aria-label="Week navigation">
-          <button id="prevWeek" class="nav-button" type="button" aria-label="View previous week">← <span>Previous</span></button>
-          <div class="week-heading" aria-live="polite">
-            <div id="weekLabel" class="week-kicker">OPENING WEEK</div>
-            <h2 id="weekRange">30 NOV – 6 DEC 2026</h2>
-            <div id="weekCounter" class="week-counter">Week 1 of 13</div>
-          </div>
-          <button id="nextWeek" class="nav-button" type="button" aria-label="View next week"><span>Next</span> →</button>
-        </section>
+  <main class="page-shell">
+    <header class="hero">
+      <img class="hero-logo" src="assets/ppec-logo.webp" alt="Phantom Peak Explorers' Club">
+      <div class="hero-copy">
+        <p class="eyebrow">PHANTOM PEAK EXPLORERS' CLUB</p>
+        <h1>Stratford Crowd Checker</h1>
+        <p class="intro">Plan your expedition. Compare Phantom Peak performances with events at London Stadium and spot the dates when Stratford is likely to be busier.</p>
+      </div>
+    </header>
 
-        <section id="summary" class="summary-card" aria-live="polite"></section>
-        <section id="schedule" class="schedule-list" aria-label="Phantom Peak performances"></section>
+    <section class="notice-strip" aria-label="How to use this checker">
+      <span class="notice-symbol" aria-hidden="true">✦</span>
+      <p><strong>Every dated London Stadium event is included.</strong> If the Stadium has not published a start time yet, it will appear as <strong>Time TBC</strong> and update automatically when details are added.</p>
+    </section>
 
-        <footer class="panel-footer">
-          <span><b class="legend-dot clash"></b> Stadium same day</span>
-          <span><b class="legend-dot clear"></b> Clear</span>
-          <span id="stadiumChecked" class="checked"></span>
-        </footer>
+    <section class="week-picker" aria-label="Week navigation">
+      <button id="prevWeek" class="nav-button" type="button" aria-label="View previous week">← Previous week</button>
+      <div class="week-heading" aria-live="polite">
+        <div id="weekLabel" class="week-kicker">OPENING WEEK</div>
+        <h2 id="weekRange">30 NOV – 6 DEC 2026</h2>
+        <div id="weekCounter" class="week-counter">Week 1 of 13</div>
+      </div>
+      <button id="nextWeek" class="nav-button" type="button" aria-label="View next week">Next week →</button>
+    </section>
+
+    <section id="summary" class="summary-card" aria-live="polite"></section>
+    <section id="schedule" class="schedule-list" aria-label="Phantom Peak performances"></section>
+
+    <section class="key-panel" aria-label="Key">
+      <div class="key-title-wrap">
+        <span class="key-star" aria-hidden="true">★</span>
+        <h2>Explorer's key</h2>
+      </div>
+      <div class="key-grid">
+        <div><span class="key-mark safe">✓</span><strong>Clear</strong><span>No Stadium event listed that day.</span></div>
+        <div><span class="key-mark clash">!</span><strong>Busy Stratford</strong><span>A London Stadium event is scheduled the same day.</span></div>
+        <div><span class="key-mark review">?</span><strong>Check advised</strong><span>A Phantom Peak listing has changed or needs verification.</span></div>
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="footer-status">
+        <p id="ppChecked"></p>
+        <p id="stadiumChecked"></p>
+      </div>
+      <p class="fine-print">Independent PPEC planning tool. Event information can change at short notice; always check your ticket and official venue information before travelling.</p>
+      <div class="source-links">
+        <a href="https://www.phantompeak.com/tickets/?flow=lyTxE9UF" target="_blank" rel="noopener noreferrer">Phantom Peak tickets</a>
+        <a href="https://www.london-stadium.com/events/all.html" target="_blank" rel="noopener noreferrer">London Stadium events</a>
+      </div>
+    </footer>
   </main>
 
   <script src="schedule-data.js"></script>

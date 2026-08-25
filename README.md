@@ -161,3 +161,7 @@ This is an independent planning tool and is not an official Phantom Peak or Lond
 
 ## Display layout
 The site uses a single-page week view inside the illustrated parchment panel. There is no internal content scrolling: Previous/Next changes the whole week, and the busiest six-date week is automatically compressed to fit the panel on phone and laptop layouts.
+
+
+### PPEC styling
+The site uses the supplied PPEC badge, Phantom Peak-inspired purple/gold/cream colours and vintage explorer/showbill-style web fonts. It is a normal responsive webpage; no decorative background frame is required.
