@@ -22,6 +22,7 @@ html { min-height: 100%; background: #efe7d7; }
 body {
   margin: 0;
   min-height: 100%;
+  overflow-x: hidden;
   color: var(--ink);
   font-family: 'Source Serif 4', Georgia, serif;
   background:
@@ -41,24 +42,21 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 }
 
 .site-layout {
-  width: min(1420px, calc(100% - 28px));
+  width: min(1040px, calc(100% - 28px));
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 250px minmax(0, 1fr);
-  gap: 24px;
-  align-items: start;
+  display: block;
 }
 
+/* Decorative only: this rail never participates in page layout. */
 .landscape-art {
-  position: sticky;
-  top: 18px;
-  align-self: start;
-  padding-top: 24px;
+  display: none;
 }
 .landscape-art img {
   display: block;
   width: 100%;
   height: auto;
+  max-height: calc(100vh - 32px);
+  object-fit: contain;
   border: 3px solid var(--cream-deep);
   outline: 2px solid var(--purple-dark);
   box-shadow: var(--shadow);
@@ -419,7 +417,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 @media (max-width: 1050px), (orientation: portrait) {
   .site-layout {
     width: min(1040px, calc(100% - 28px));
-    display: block;
   }
   .landscape-art { display: none; }
   .portrait-banner { display: block; }
@@ -428,6 +425,30 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 
 @media (min-width: 1051px) and (orientation: landscape) {
   .portrait-banner { display: none; }
+}
+
+/* Wide landscape screens get the Jonabot rail in the spare left gutter.
+   It is fixed to the viewport, pointer-free and deliberately sized so it
+   can never push or overlap the 1040px site column. */
+@media (min-width: 1280px) and (orientation: landscape) {
+  .landscape-art {
+    display: block;
+    position: fixed;
+    z-index: 0;
+    left: 8px;
+    top: 50%;
+    width: min(150px, calc((100vw - 1040px) / 2 - 14px));
+    margin: 0;
+    padding: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .page-shell {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 720px) {
