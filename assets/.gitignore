@@ -1,0 +1,9 @@
+# Local development
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Playwright diagnostics are uploaded as GitHub Action artifacts, not committed.
+diagnostics/*
+!diagnostics/.gitkeep
