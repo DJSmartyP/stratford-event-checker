@@ -475,3 +475,353 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+
+/* v1.6 card refresh */
+.schedule-list {
+  display: grid;
+  gap: 16px;
+}
+
+.day-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  overflow: hidden;
+  border: 2px solid var(--purple-dark);
+  background: linear-gradient(180deg, rgba(255,252,244,.98), rgba(252,245,232,.98));
+  box-shadow: 0 12px 24px rgba(36, 10, 51, .08);
+}
+
+.day-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 108px;
+  height: 8px;
+  background: linear-gradient(90deg, transparent, rgba(225,189,56,.85));
+}
+
+.day-card.has-clash {
+  border-color: #91291f;
+  box-shadow: 0 14px 28px rgba(159, 47, 33, .14);
+}
+
+.day-card.needs-review {
+  border-style: dashed;
+}
+
+.date-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  min-height: 168px;
+  padding: 16px 10px;
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(225,189,56,.14), transparent 34%),
+    linear-gradient(180deg, #5d148f, #2b0b45 86%);
+  border-right: 4px solid var(--gold);
+}
+
+.day-card.has-clash .date-block {
+  background: linear-gradient(180deg, #281e2e, #111b28 90%);
+  border-right-color: var(--red);
+}
+
+.date-block::after {
+  content: '✦';
+  position: absolute;
+  bottom: 10px;
+  font-size: .84rem;
+  color: rgba(255,244,207,.7);
+}
+
+.date-day {
+  font-family: 'Rye', Georgia, serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: .95;
+}
+
+.date-month {
+  color: var(--gold);
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: .92rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.date-weekday {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: .95;
+}
+
+.day-content {
+  padding: 16px 18px 18px;
+  min-width: 0;
+}
+
+.day-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+}
+
+.day-title {
+  margin: 0;
+  color: var(--purple-dark);
+  font-family: 'Rye', Georgia, serif;
+  font-size: 1.26rem;
+  font-weight: 400;
+}
+
+.slot-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: .74rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.slot-tag.clear {
+  background: #e4f0ee;
+  color: #315f68;
+  border: 1px solid rgba(91,135,144,.35);
+}
+
+.slot-tag.clash {
+  background: #fde4df;
+  color: #9b3227;
+  border: 1px solid rgba(227,77,63,.35);
+}
+
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.show-times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 10px;
+}
+
+.time-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 2px solid rgba(62,96,147,.48);
+  border-radius: 999px;
+  background: #eef2fb;
+  color: #25406e;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: .98rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.time-pill.special {
+  border-color: rgba(109,26,153,.35);
+  background: #f5edff;
+  color: var(--purple);
+}
+
+.time-pill.muted {
+  border-color: rgba(112,99,124,.28);
+  background: #f3efea;
+  color: #63576f;
+}
+
+.special-note {
+  margin: 0 0 12px;
+  color: var(--purple);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.review-note {
+  margin: 0 0 12px;
+  padding: 9px 11px;
+  border-left: 4px solid #c7752c;
+  background: #fff4e5;
+  color: #6f3d13;
+  line-height: 1.42;
+  font-size: .96rem;
+}
+
+.stadium-event,
+.no-stadium {
+  margin-top: 8px;
+}
+
+.no-stadium {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 13px;
+  border: 1px solid rgba(91,135,144,.4);
+  border-left: 5px solid var(--teal);
+  border-radius: 10px;
+  background: #edf5f3;
+  color: #315f68;
+}
+
+.no-stadium strong,
+.stadium-item-copy strong {
+  display: block;
+}
+
+.no-stadium span:last-child {
+  display: block;
+  margin-top: 2px;
+  color: #5a6f74;
+  line-height: 1.35;
+}
+
+.stadium-event {
+  padding: 12px 13px 10px;
+  border: 1px solid rgba(227,77,63,.55);
+  border-left: 5px solid var(--red);
+  border-radius: 10px;
+  background: #fff0e5;
+}
+
+.status-label {
+  margin-bottom: 8px;
+  color: #9a2c21;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.stadium-list {
+  display: grid;
+  gap: 8px;
+}
+
+.stadium-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.state-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: .96rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.no-stadium .state-icon {
+  background: var(--teal);
+  color: white;
+}
+
+.stadium-item .state-icon {
+  background: var(--red);
+  color: white;
+}
+
+.stadium-item-copy {
+  min-width: 0;
+}
+
+.stadium-name {
+  margin: 0;
+  color: #5c221d;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.stadium-time {
+  margin-top: 3px;
+  color: #7b4434;
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: .94rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+@media (max-width: 720px) {
+  .schedule-list {
+    gap: 12px;
+  }
+
+  .day-card {
+    grid-template-columns: 1fr;
+  }
+
+  .day-card::before {
+    width: 72px;
+  }
+
+  .date-block {
+    min-height: auto;
+    padding: 12px 12px 18px;
+    border-right: 0;
+    border-bottom: 4px solid var(--gold);
+  }
+
+  .day-card.has-clash .date-block {
+    border-bottom-color: var(--red);
+  }
+
+  .day-content {
+    padding: 14px 14px 15px;
+  }
+
+  .day-title {
+    font-size: 1.13rem;
+  }
+
+  .slot-tag,
+  .source-badge {
+    font-size: .68rem;
+  }
+
+  .time-pill {
+    min-height: 31px;
+    font-size: .92rem;
+  }
+
+  .stadium-name {
+    font-size: 1rem;
+  }
+}
