@@ -165,3 +165,12 @@ The site uses a single-page week view inside the illustrated parchment panel. Th
 
 ### PPEC styling
 The site uses the supplied PPEC badge, Phantom Peak-inspired purple/gold/cream colours and vintage explorer/showbill-style web fonts. It is a normal responsive webpage; no decorative background frame is required.
+
+## Responsive PPEC artwork
+
+The site keeps the original card-based calendar UI and swaps decorative artwork by layout:
+
+- Landscape/laptop layouts show `assets/stratford-rail-tall.png` as a left-side visual rail.
+- Portrait/mobile layouts show `assets/stratford-banner-wide.png` above the normal site content.
+
+The artwork is decorative only. Week navigation, show cards and calendar updating remain ordinary responsive HTML and are not positioned inside the images.

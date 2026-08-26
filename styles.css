@@ -40,9 +40,46 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
   border-bottom: 2px solid #f0d774;
 }
 
-.page-shell {
-  width: min(1040px, calc(100% - 28px));
+.site-layout {
+  width: min(1420px, calc(100% - 28px));
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.landscape-art {
+  position: sticky;
+  top: 18px;
+  align-self: start;
+  padding-top: 24px;
+}
+.landscape-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--cream-deep);
+  outline: 2px solid var(--purple-dark);
+  box-shadow: var(--shadow);
+}
+
+.portrait-banner {
+  display: none;
+  margin: 0 0 18px;
+}
+.portrait-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--cream-deep);
+  outline: 2px solid var(--purple-dark);
+  box-shadow: var(--shadow);
+}
+
+.page-shell {
+  width: 100%;
+  min-width: 0;
   padding: 24px 0 46px;
 }
 
@@ -117,6 +154,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
   font-size: 1.05rem;
   line-height: 1.48;
 }
+
 
 .notice-strip {
   display: flex;
@@ -378,8 +416,32 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 .source-links { display: flex; flex-wrap: wrap; gap: 12px; }
 .source-links a { color: var(--purple); font-weight: 700; text-underline-offset: 3px; }
 
+@media (max-width: 1050px), (orientation: portrait) {
+  .site-layout {
+    width: min(1040px, calc(100% - 28px));
+    display: block;
+  }
+  .landscape-art { display: none; }
+  .portrait-banner { display: block; }
+  .page-shell { padding-top: 18px; }
+}
+
+@media (min-width: 1051px) and (orientation: landscape) {
+  .portrait-banner { display: none; }
+}
+
 @media (max-width: 720px) {
-  .page-shell { width: min(100% - 18px, 1040px); padding-top: 11px; }
+  .site-layout { width: min(100% - 18px, 1040px); }
+  .page-shell { padding-top: 11px; }
+  .portrait-banner {
+    margin: 0 0 14px;
+    overflow: hidden;
+  }
+  .portrait-banner img {
+    aspect-ratio: 3 / 1;
+    object-fit: cover;
+    object-position: center;
+  }
   .hero { grid-template-columns: 104px minmax(0, 1fr); gap: 15px; padding: 16px 17px; }
   .hero-logo { max-height: 112px; }
   .eyebrow { font-size: .7rem; letter-spacing: .12em; }
