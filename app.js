@@ -204,7 +204,7 @@
           <div class="day-heading-row">
             <h3 class="day-title">Phantom Peak</h3>
             ${statusBadge(events)}
-            <span class="source-badge ${needsReview ? 'review' : 'live'}">${needsReview ? 'Check advised' : 'Performance listed'}</span>
+            ${needsReview ? '<span class="source-badge review">Check advised</span>' : ''}
           </div>
           ${performanceTimesMarkup(performance)}
           ${performance.note ? `<div class="special-note">${esc(performance.note)}</div>` : ''}
@@ -230,7 +230,17 @@
     }
   });
 
-  ppChecked.textContent = `Phantom Peak: ${data.phantomPeak.lastChecked || 'seed data'}`;
-  stadiumChecked.textContent = `London Stadium: ${data.londonStadium.lastChecked || 'seed data'}`;
+  const pp = data.phantomPeak;
+  const ppLive = pp.liveSyncStatus === 'live-calendar';
+  if (ppLive) {
+    ppChecked.textContent = `Phantom Peak schedule synced: ${pp.lastSuccessfulLiveSync || pp.lastChecked || 'recently'}`;
+  } else if (pp.lastChecked) {
+    ppChecked.textContent = `Phantom Peak live check: ${pp.lastChecked} · fallback schedule retained`;
+  } else {
+    ppChecked.textContent = 'Phantom Peak schedule: fallback data';
+  }
+  stadiumChecked.textContent = data.londonStadium.lastChecked
+    ? `London Stadium checked: ${data.londonStadium.lastChecked}`
+    : 'London Stadium: awaiting first live check';
   render();
 })();

@@ -178,3 +178,8 @@ The artwork is decorative only. Week navigation, show cards and calendar updatin
 
 ## v1.8 layout
 The decorative side rail has been removed. The wide Stratford/Jonabot artwork now appears as the top banner on all screen sizes, avoiding viewport-gutter and horizontal-scroll issues.
+
+
+## v1.10 UI tidy-up
+
+The public Explorer's key has been removed because the show cards already communicate clear/busy status. The internal `review` state is only surfaced on a specific affected performance if it occurs. Footer status now distinguishes a successful London Stadium check from a Phantom Peak live scan that retained fallback schedule data.

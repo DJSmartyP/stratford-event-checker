@@ -21,3 +21,6 @@ A dated London Stadium event is still shown as a clash even when the venue has n
 
 ## Display layout
 The site uses a single-page week view inside the illustrated parchment panel. There is no internal content scrolling: Previous/Next changes the whole week, and the busiest six-date week is automatically compressed to fit the panel on phone and laptop layouts.
+
+
+**Status note:** the footer dates are generated from `schedule-data.js` and update after the refresh workflow runs. If a newly uploaded bundle briefly shows an older seeded date, the push-triggered refresh should replace it automatically.
