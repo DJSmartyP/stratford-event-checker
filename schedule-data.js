@@ -5,9 +5,9 @@ window.CALENDAR_DATA = {
   },
   "phantomPeak": {
     "sourceUrl": "https://www.phantompeak.com/tickets/?flow=lyTxE9UF",
-    "lastChecked": "29 August 2026",
+    "lastChecked": "Seeded 25 August 2026",
     "lastSuccessfulLiveSync": null,
-    "liveSyncStatus": "scan-failed-fallback-retained",
+    "liveSyncStatus": "awaiting-first-run",
     "performances": [
       {
         "date": "2026-12-04",
@@ -493,7 +493,7 @@ window.CALENDAR_DATA = {
   },
   "londonStadium": {
     "sourceUrl": "https://www.london-stadium.com/events/all.html",
-    "lastChecked": "29 August 2026",
+    "lastChecked": "Seeded 25 August 2026",
     "events": [
       {
         "date": "2026-12-08",

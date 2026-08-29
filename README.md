@@ -170,7 +170,11 @@ The site uses the supplied PPEC badge, Phantom Peak-inspired purple/gold/cream c
 
 The site keeps the original card-based calendar UI and swaps decorative artwork by layout:
 
-- Landscape/laptop layouts show `assets/stratford-rail-tall.png` as a left-side visual rail.
+- All layouts use `assets/stratford-banner-wide.png` as the top Jonabot/Stratford banner.
 - Portrait/mobile layouts show `assets/stratford-banner-wide.png` above the normal site content.
 
 The artwork is decorative only. Week navigation, show cards and calendar updating remain ordinary responsive HTML and are not positioned inside the images.
+
+
+## v1.8 layout
+The decorative side rail has been removed. The wide Stratford/Jonabot artwork now appears as the top banner on all screen sizes, avoiding viewport-gutter and horizontal-scroll issues.

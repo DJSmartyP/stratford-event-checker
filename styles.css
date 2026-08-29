@@ -44,32 +44,20 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 .site-layout {
   width: min(1040px, calc(100% - 28px));
   margin: 0 auto;
-  display: block;
-}
-
-/* Decorative only: this rail never participates in page layout. */
-.landscape-art {
-  display: none;
-}
-.landscape-art img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: calc(100vh - 32px);
-  object-fit: contain;
-  border: 3px solid var(--cream-deep);
-  outline: 2px solid var(--purple-dark);
-  box-shadow: var(--shadow);
 }
 
 .portrait-banner {
-  display: none;
+  display: block;
   margin: 0 0 18px;
+  overflow: hidden;
 }
 .portrait-banner img {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  object-position: center;
   border: 3px solid var(--cream-deep);
   outline: 2px solid var(--purple-dark);
   box-shadow: var(--shadow);
@@ -414,55 +402,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 .source-links { display: flex; flex-wrap: wrap; gap: 12px; }
 .source-links a { color: var(--purple); font-weight: 700; text-underline-offset: 3px; }
 
-@media (max-width: 1050px), (orientation: portrait) {
-  .site-layout {
-    width: min(1040px, calc(100% - 28px));
-  }
-  .landscape-art { display: none; }
-  .portrait-banner { display: block; }
-  .page-shell { padding-top: 18px; }
-}
-
-@media (min-width: 1051px) and (orientation: landscape) {
-  .portrait-banner { display: none; }
-}
-
-/* Wide landscape screens get the Jonabot rail in the spare left gutter.
-   It is fixed to the viewport, pointer-free and deliberately sized so it
-   can never push or overlap the 1040px site column. */
-@media (min-width: 1280px) and (orientation: landscape) {
-  .landscape-art {
-    display: block;
-    position: fixed;
-    z-index: 0;
-    left: 8px;
-    top: 50%;
-    width: min(150px, calc((100vw - 1040px) / 2 - 14px));
-    margin: 0;
-    padding: 0;
-    transform: translateY(-50%);
-    pointer-events: none;
-    user-select: none;
-  }
-
-  .page-shell {
-    position: relative;
-    z-index: 1;
-  }
-}
-
 @media (max-width: 720px) {
   .site-layout { width: min(100% - 18px, 1040px); }
   .page-shell { padding-top: 11px; }
-  .portrait-banner {
-    margin: 0 0 14px;
-    overflow: hidden;
-  }
-  .portrait-banner img {
-    aspect-ratio: 3 / 1;
-    object-fit: cover;
-    object-position: center;
-  }
+  .portrait-banner { margin: 0 0 14px; }
   .hero { grid-template-columns: 104px minmax(0, 1fr); gap: 15px; padding: 16px 17px; }
   .hero-logo { max-height: 112px; }
   .eyebrow { font-size: .7rem; letter-spacing: .12em; }
