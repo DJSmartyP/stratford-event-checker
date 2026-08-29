@@ -12,6 +12,12 @@ on:
 permissions:
   contents: write
 
+# Only one calendar refresh should actively write at a time. New runs wait
+# rather than cancelling a refresh that may already have collected live data.
+concurrency:
+  group: stratford-calendar-refresh
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -38,6 +44,43 @@ jobs:
         continue-on-error: true
         run: python scripts/update_data.py
 
+      - name: Commit refreshed data
+        if: steps.refresh.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # A manual GitHub upload or another process can update main while this
+          # job is scraping. If that happens, refresh again from the new HEAD
+          # instead of failing with a non-fast-forward push.
+          for attempt in 1 2 3; do
+            if git diff --quiet -- schedule-data.js; then
+              echo "No calendar data changes to commit"
+              exit 0
+            fi
+
+            git add schedule-data.js
+            git commit -m "Refresh Stratford calendar data"
+
+            if git push origin HEAD:main; then
+              echo "Calendar data pushed successfully"
+              exit 0
+            fi
+
+            if [ "$attempt" -eq 3 ]; then
+              echo "Remote changed repeatedly; giving up after 3 attempts"
+              exit 1
+            fi
+
+            echo "main changed during refresh; syncing latest main and retrying (attempt $((attempt + 1))/3)"
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/update_data.py
+            sleep 2
+          done
+
       - name: Upload Phantom Peak diagnostics when available
         if: always()
         uses: actions/upload-artifact@v4
@@ -46,18 +89,6 @@ jobs:
           path: diagnostics/
           if-no-files-found: ignore
           retention-days: 7
-
-      - name: Commit refreshed data
-        run: |
-          if git diff --quiet -- schedule-data.js; then
-            echo "No calendar data changes to commit"
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add schedule-data.js
-          git commit -m "Refresh Stratford calendar data"
-          git push
 
       - name: Report refresh failure
         if: steps.refresh.outcome == 'failure'
