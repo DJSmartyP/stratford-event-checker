@@ -15,6 +15,30 @@ The site covers **4 December 2026 to 28 February 2027** and opens on Phantom Pea
 
 ## Automatic updates
 
+Each source refreshes independently. London Stadium HTTP failures get three
+attempts with 2- and 4-second back-off. If a source is unavailable (or Phantom
+Peak cannot verify a full-range scan), its known data is retained and the other
+source can still update. Empty Stadium results are rejected as before.
+
+Each source has a `refresh` object in `schedule-data.js`: `status`,
+`lastAttemptAt`, `lastSuccessfulRefreshAt`, `monitoringStartedAt`, and `error`.
+Timestamps include a timezone; unsuccessful checks never advance success time.
+The existing display fields and JavaScript wrapper remain compatible.
+
+The workflow commits data and status changes before checking freshness. An
+external outage only fails this check once either source has gone 48 hours
+without a successful refresh. Legacy successful date labels migrate using
+midnight London time conservatively. If no successful refresh was recorded
+(as with the original Phantom Peak fallback), success stays null and a one-time
+48-hour window begins at `monitoringStartedAt`; later failed runs do not reset it.
+Repository, dependency, or save/push errors still surface as workflow failures.
+
+Run regression tests with `python -m unittest discover -s tests -v`.
+`python scripts/update_data.py` saves results before reporting staleness.
+The workflow uses `--defer-freshness-check` while refreshing (including push
+retries), then `--check-freshness` to check the final saved metadata without
+scraping again.
+
 ### London Stadium
 
 The action reads the official London Stadium events page:

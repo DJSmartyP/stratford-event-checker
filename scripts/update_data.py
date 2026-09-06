@@ -14,10 +14,12 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+import copy
 import json
 import re
+import time
 from collections import defaultdict
-from datetime import date, datetime
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Iterable
 from zoneinfo import ZoneInfo
@@ -243,12 +245,21 @@ def parse_stadium_html(html: str) -> list[dict]:
 
 
 def scrape_stadium() -> list[dict]:
-    response = requests.get(
-        STADIUM_URL,
-        timeout=35,
-        headers={"User-Agent": "PPEC-Stratford-Crowd-Checker/2.0 (+GitHub Pages)"},
-    )
-    response.raise_for_status()
+    for attempt in range(3):
+        try:
+            response = requests.get(
+                STADIUM_URL,
+                timeout=35,
+                headers={"User-Agent": "PPEC-Stratford-Crowd-Checker/2.0 (+GitHub Pages)"},
+            )
+            response.raise_for_status()
+            break
+        except requests.RequestException:
+            if attempt == 2:
+                raise
+            delay = 2 ** (attempt + 1)
+            print(f"London Stadium: request failed; retrying in {delay}s ({attempt + 2}/3)")
+            time.sleep(delay)
     unique = parse_stadium_html(response.text)
     if not unique:
         raise RuntimeError("No London Stadium events found in target range; refusing to overwrite existing data")
@@ -778,46 +789,109 @@ def merge_phantom_peak(data: dict, scan: dict) -> bool:
     pp["performances"].sort(key=lambda p: p["date"])
     return True
 
+SOURCE_NAMES = {"londonStadium": "London Stadium", "phantomPeak": "Phantom Peak"}
+STALE_AFTER = timedelta(hours=48)
+
+
+def initialise_refresh_metadata(data: dict, now: datetime) -> None:
+    for key in SOURCE_NAMES:
+        source = data[key]
+        if "refresh" in source:
+            continue
+        # Legacy Stadium lastChecked only advanced on success. PP lastChecked
+        # includes failed checks, so only its successful-sync label is evidence.
+        legacy = source.get("lastChecked" if key == "londonStadium" else "lastSuccessfulLiveSync")
+        last_success = None
+        if legacy:
+            try:
+                last_success = datetime.strptime(legacy, "%d %B %Y").replace(
+                    tzinfo=ZoneInfo("Europe/London")
+                ).astimezone(timezone.utc).isoformat()
+            except ValueError:
+                pass
+        source["refresh"] = {
+            "status": "unknown", "lastAttemptAt": None,
+            "lastSuccessfulRefreshAt": last_success,
+            "monitoringStartedAt": now.isoformat(), "error": None,
+        }
+
+
+def stale_sources(data: dict, now: datetime) -> list[str]:
+    stale = []
+    for key, name in SOURCE_NAMES.items():
+        meta = data[key].get("refresh", {})
+        timestamp = meta.get("lastSuccessfulRefreshAt") or meta.get("monitoringStartedAt")
+        try:
+            baseline = datetime.fromisoformat(timestamp)
+            if baseline.tzinfo is None:
+                raise ValueError("Freshness timestamps must include a timezone")
+            expired = now - baseline >= STALE_AFTER
+        except (TypeError, ValueError):
+            expired = True
+        if expired:
+            stale.append(name)
+    return stale
+
+
+def refresh_sources(data: dict, *, stadium_only=False, phantom_only=False) -> None:
+    initialise_refresh_metadata(data, datetime.now(timezone.utc))
+    for key, name in SOURCE_NAMES.items():
+        if (key == "londonStadium" and phantom_only) or (key == "phantomPeak" and stadium_only):
+            continue
+        source = data[key]
+        meta = source["refresh"]
+        meta["lastAttemptAt"] = datetime.now(timezone.utc).isoformat()
+        try:
+            # Work on a copy: even an exception partway through a merge must
+            # never publish partially changed performance records.
+            candidate = copy.deepcopy(data)
+            if key == "londonStadium":
+                events = scrape_stadium()
+                candidate[key]["events"] = events
+                candidate[key]["lastChecked"] = today_label()
+                live = True
+            else:
+                scan = asyncio.run(scrape_phantom_peak())
+                live = merge_phantom_peak(candidate, scan)
+            data[key] = candidate[key]
+            meta = data[key]["refresh"]
+            meta["status"] = "success" if live else "fallback-retained"
+            meta["error"] = None if live else "Full-range live scan could not be verified"
+            if live:
+                meta["lastSuccessfulRefreshAt"] = datetime.now(timezone.utc).isoformat()
+            print(f"{name}: {meta['status']}")
+        except Exception as exc:
+            meta["status"] = "error-fallback-retained"
+            meta["error"] = str(exc)
+            if key == "phantomPeak":
+                source["lastChecked"] = today_label()
+                source["liveSyncStatus"] = "scan-error-fallback-retained"
+                try:
+                    DIAG_DIR.mkdir(exist_ok=True)
+                    (DIAG_DIR / "phantom-peak-error.txt").write_text(str(exc) + "\n", encoding="utf-8")
+                except OSError as diagnostic_error:
+                    print(f"Could not write diagnostics: {diagnostic_error}")
+            print(f"{name}: refresh unavailable; known data retained: {exc}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--stadium-only", action="store_true")
     parser.add_argument("--phantom-only", action="store_true")
+    parser.add_argument("--check-freshness", action="store_true", help="Check saved metadata without scraping or writing")
+    parser.add_argument("--defer-freshness-check", action="store_true", help="Save updates now; workflow checks freshness after committing")
     args = parser.parse_args()
     if args.stadium_only and args.phantom_only:
         raise SystemExit("Choose only one of --stadium-only or --phantom-only")
 
     data = load_data()
-    errors: list[str] = []
-
-    if not args.phantom_only:
-        try:
-            events = scrape_stadium()
-            data["londonStadium"]["events"] = events
-            data["londonStadium"]["lastChecked"] = today_label()
-            print(f"London Stadium: {len(events)} events in target range")
-        except Exception as exc:
-            errors.append(f"London Stadium refresh failed: {exc}")
-            print(errors[-1])
-
-    if not args.stadium_only:
-        try:
-            scan = asyncio.run(scrape_phantom_peak())
-            live = merge_phantom_peak(data, scan)
-            if live:
-                print(f"Phantom Peak: live calendar sync succeeded ({len(scan.get('availableDates', []))} live dates; {len(scan['times'])} dates with extracted times)")
-            else:
-                print("Phantom Peak: full-range live sync not verified; fallback retained (diagnostic artifact written)")
-        except Exception as exc:
-            data["phantomPeak"]["lastChecked"] = today_label()
-            data["phantomPeak"]["liveSyncStatus"] = "scan-error-fallback-retained"
-            DIAG_DIR.mkdir(exist_ok=True)
-            (DIAG_DIR / "phantom-peak-error.txt").write_text(str(exc) + "\n", encoding="utf-8")
-            errors.append(f"Phantom Peak refresh failed: {exc}")
-            print(errors[-1])
-
-    save_data(data)
-    if errors:
-        raise SystemExit("; ".join(errors))
+    if not args.check_freshness:
+        refresh_sources(data, stadium_only=args.stadium_only, phantom_only=args.phantom_only)
+        save_data(data)
+    if not args.defer_freshness_check:
+        stale = stale_sources(data, datetime.now(timezone.utc))
+        if stale:
+            raise SystemExit("Published data is stale (48 hours without a successful refresh): " + ", ".join(stale))
 
 
 if __name__ == "__main__":
