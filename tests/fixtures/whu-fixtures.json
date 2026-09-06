@@ -1,0 +1,674 @@
+[
+  {
+    "kickOffUtc": "2026-09-08T19:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "564rbFXOK1d32mBpmLffdz",
+      "matchLocation": "Toughsheet Community Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Bolton Wanderers"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-09-11T19:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "EkSfhNRGFGTN8XLGodfv2",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Wrexham"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-09-15T18:45:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "5PM6QmAPO1hSuwI9MhauCd",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Fulham"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-09-19T11:30:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "7dbZAXHLs04NN9VxO8TqDE",
+      "matchLocation": "The Den",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Millwall"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-10-09T19:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "1Y4uJvZvaEgSwjY3UGA2E9",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Queens Park Rangers"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-10-14T19:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "3ZnDTpH82YBg5SpELQwI7V",
+      "matchLocation": "ProAmpac Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Lincoln City"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-10-17T14:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "43JpUbp4XXuoUx3Suzh0BC",
+      "matchLocation": "Swansea.com Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Swansea City"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-10-24T14:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "3MoBvpbWyBfVXMuLfirPta",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Southampton"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-10-31T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "4zx9BXsOpTSHXKicGFiP2d",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "West Bromwich Albion"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-11-04T19:45:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "5g74GbbD9YEWzUv1pQce5z",
+      "matchLocation": "Cardiff City Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Cardiff City"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-11-07T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "1uUsJ7rLZrLykf3zJaWCt5",
+      "matchLocation": "Ewood Park",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Blackburn Rovers"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-11-21T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "4RzrTuluqV8LoEXldEUXwg",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Preston North End"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-11-24T19:45:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "1mSEwhaJYrhYMQPKMniYfv",
+      "matchLocation": "Fratton Park",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Portsmouth"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-11-28T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "2TRujRXSajPaqLBCyxU636",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Stoke City"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-12-04T20:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "56xHGkiIk5Qjj4JPdAwaxm",
+      "matchLocation": "Bramall Lane",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Sheffield United"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-12-08T20:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "17NJLrIK7PhJ0a1i85Rkxn",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Middlesbrough"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-12-12T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "1XiP4DmuZZwBLDBccv8tUF",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Bristol City"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-12-19T12:30:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "B5G7GWUjZr6GVgrxKqT2d",
+      "matchLocation": "St. Andrew's @ Knighthead Park",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Birmingham City"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-12-26T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "5TYDogSPuuQlUFul6rgNbT",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Norwich City"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2026-12-29T20:15:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "6B85Cx2iAW3RaFqyEWmk20",
+      "matchLocation": "St. Mary's Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Southampton"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-01-01T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "5IHmQiyXEuPaIxPlveIix3",
+      "matchLocation": "Ashton Gate Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Bristol City"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-01-16T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "6RC48DvPklukYrUU7XujGP",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Swansea City"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-01-23T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "6nL62Xi14O3YJOaPq5Kj4L",
+      "matchLocation": "The Hawthorns",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Bromwich Albion"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-01-27T19:45:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "1kaPOv1JE7DA6R5fHibeo9",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Cardiff City"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-01-30T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "6Sw6qRfubEz7BxLoPK3mmK",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Blackburn Rovers"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-02-06T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "6a5lF2egkVElp84HaTt5Nb",
+      "matchLocation": "Deepdale",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Preston North End"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-02-13T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "1kDAM1IwpdX7kvGW2WttOT",
+      "matchLocation": "Racecourse Ground",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Wrexham"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-02-16T19:45:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "RFpejxru4hBQU2tcDoYOi",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Lincoln City"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-02-21T12:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "4oJmnBXq6fwndxVa2y2t99",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Millwall"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-02-27T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "m3xTkvbEdAeYe3NKpPy7O",
+      "matchLocation": "MATRADE Loftus Road",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Queens Park Rangers"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-03-02T19:45:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "1mkTXNCagSOvnBCj2xyyAB",
+      "matchLocation": "The Valley",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Charlton Athletic"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-03-06T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "7qG2gej3zdCSo4s28huA1U",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Burnley"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-03-13T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "5Tma0g8otNtYL3gOb0AjSU",
+      "matchLocation": "bet365 Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Stoke City"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-03-17T19:45:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "5uv1fKks8oUKoZxdE9vQko",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Sheffield United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-03-20T15:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "4iYaKWUEYEh2uRI8DeqjRB",
+      "matchLocation": "Carrow Road",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Norwich City"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-04-03T14:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "7o0zT0AuVcbUdqcUhmDGvi",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Birmingham City"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-04-06T18:45:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "57TaOUZa5lNvfQkfiA28Cv",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Bolton Wanderers"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-04-10T14:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "5vnURzQ8nsqNuDfridxQ7z",
+      "matchLocation": "Pride Park Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Derby County"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-04-17T14:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "6NxiPc1CN5Ffvug7UR2AVd",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Watford"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-04-20T18:45:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "7AdVxtKJ7Im3NQnTTqUouU",
+      "matchLocation": "Molineux Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Wolverhampton Wanderers"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-04-24T14:00:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "6Dww6RJhflYkKgCdKKrpH1",
+      "matchLocation": "Riverside Stadium",
+      "homeOrAway": "Away",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "Middlesbrough"
+      },
+      "awayTeam": {
+        "clubName": "West Ham United"
+      }
+    }
+  },
+  {
+    "kickOffUtc": "2027-05-01T11:30:00.000Z",
+    "kickOffTbc": "$undefined",
+    "fixtureProps": {
+      "id": "5Ld7aVzIXqJr3OxzV2IgNW",
+      "matchLocation": "London Stadium",
+      "homeOrAway": "Home",
+      "matchStatus": "PreMatch",
+      "homeTeam": {
+        "clubName": "West Ham United"
+      },
+      "awayTeam": {
+        "clubName": "Portsmouth"
+      }
+    }
+  }
+]

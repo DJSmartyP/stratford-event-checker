@@ -239,7 +239,12 @@
   } else {
     ppChecked.textContent = 'Phantom Peak schedule: fallback data';
   }
-  stadiumChecked.textContent = data.londonStadium.lastChecked
+  const stadium = data.londonStadium;
+  stadiumChecked.textContent = stadium.refresh?.status === 'partial-football-refresh'
+    ? 'London Stadium site unavailable · West Ham home fixtures synced · other events unverified'
+    : stadium.refresh?.status === 'error-fallback-retained'
+    ? 'London Stadium check unavailable · known events retained'
+    : stadium.lastChecked
     ? `London Stadium checked: ${data.londonStadium.lastChecked}`
     : 'London Stadium: awaiting first live check';
   render();

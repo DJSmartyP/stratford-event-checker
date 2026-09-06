@@ -10,6 +10,9 @@ from scripts import update_data as updater
 
 class RefreshTests(unittest.TestCase):
     def setUp(self):
+        backup = patch.object(updater, 'scrape_west_ham', side_effect=RuntimeError('backup offline'))
+        backup.start()
+        self.addCleanup(backup.stop)
         self.data = updater.load_data()
         self.now = datetime.now(timezone.utc)
         updater.initialise_refresh_metadata(self.data, self.now)

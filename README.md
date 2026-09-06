@@ -20,6 +20,20 @@ attempts with 2- and 4-second back-off. If a source is unavailable (or Phantom
 Peak cannot verify a full-range scan), its known data is retained and the other
 source can still update. Empty Stadium results are rejected as before.
 
+Stadium requests use a 10-second connection timeout and 35-second read timeout.
+If the Stadium source fails, the updater checks the official West Ham men's
+fixtures page and merges verified London Stadium home fixtures. It decodes the
+page's structured fixture data without executing scripts. Existing fixtures are
+matched by source ID, or an unambiguous exact name for legacy records, so changed
+dates can be updated. Missing fixtures and all other venue events are retained.
+Ambiguous, malformed or incomplete target-month data is rejected.
+
+This backup has separate `footballRefresh` metadata and a visible partial-coverage
+message. It does **not** reset the full venue's successful-refresh timestamp:
+football listings cannot verify concerts or other Stadium bookings. The 48-hour
+full-venue freshness alert therefore remains active while the Stadium is down,
+even though football changes and Phantom Peak updates continue to be committed.
+
 Each source has a `refresh` object in `schedule-data.js`: `status`,
 `lastAttemptAt`, `lastSuccessfulRefreshAt`, `monitoringStartedAt`, and `error`.
 Timestamps include a timezone; unsuccessful checks never advance success time.

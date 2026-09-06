@@ -33,6 +33,7 @@ DIAG_DIR = ROOT / "diagnostics"
 
 PP_URL = "https://www.phantompeak.com/tickets/?flow=lyTxE9UF"
 STADIUM_URL = "https://www.london-stadium.com/events/all.html"
+WEST_HAM_URL = "https://www.whufc.com/en/matches/mens-team/fixtures"
 TARGET_START = date(2026, 12, 4)
 TARGET_END = date(2027, 2, 28)
 
@@ -249,7 +250,7 @@ def scrape_stadium() -> list[dict]:
         try:
             response = requests.get(
                 STADIUM_URL,
-                timeout=35,
+                timeout=(10, 35),
                 headers={"User-Agent": "PPEC-Stratford-Crowd-Checker/2.0 (+GitHub Pages)"},
             )
             response.raise_for_status()
@@ -264,6 +265,117 @@ def scrape_stadium() -> list[dict]:
     if not unique:
         raise RuntimeError("No London Stadium events found in target range; refusing to overwrite existing data")
     return unique
+
+
+def parse_west_ham_html(html: str) -> list[dict]:
+    """Decode the fixture page's JSON transport without executing JavaScript."""
+    soup = BeautifulSoup(html, "html.parser")
+    chunks = []
+    for script in soup.find_all("script"):
+        match = re.fullmatch(r"self\.__next_f\.push\((.*)\);?", script.get_text().strip(), re.S)
+        if match:
+            item = json.loads(match.group(1))
+            if isinstance(item, list) and len(item) == 2 and item[0] == 1 and isinstance(item[1], str):
+                chunks.append(item[1])
+
+    def fixtures(value):
+        if isinstance(value, dict):
+            if "fixtureProps" in value:
+                yield value
+            for child in value.values():
+                yield from fixtures(child)
+        elif isinstance(value, list):
+            for child in value:
+                yield from fixtures(child)
+
+    events = {}
+    # React transport records start with a hexadecimal ID. Decode only JSON
+    # records; module references and text records are not fixture objects.
+    for record in re.finditer(r"(?:^|\n)[0-9a-f]+:([\[{].*)", "".join(chunks)):
+        try:
+            value, _ = json.JSONDecoder().raw_decode(record.group(1))
+        except ValueError:
+            continue
+        for row in fixtures(value):
+            fixture = row["fixtureProps"]
+            if fixture.get("homeOrAway") != "Home" or fixture.get("matchLocation") != "London Stadium":
+                continue
+            if fixture.get("homeTeam", {}).get("clubName") != "West Ham United":
+                raise ValueError("Unexpected home team in West Ham fixture")
+            start = datetime.fromisoformat(row["kickOffUtc"].replace("Z", "+00:00"))
+            if start.tzinfo is None:
+                raise ValueError("Fixture kickoff has no timezone")
+            local = start.astimezone(ZoneInfo("Europe/London"))
+            if not in_target(local.date()):
+                continue
+            status = fixture.get("matchStatus")
+            if status not in {"PreMatch", "Postponed", "Cancelled", "Canceled"}:
+                raise ValueError(f"Unsupported fixture status: {status}")
+            opponent = fixture["awayTeam"]["clubName"]
+            identity = fixture["id"]
+            if not opponent or not identity:
+                raise ValueError("Fixture is missing its identity or opponent")
+            tbc = row.get("kickOffTbc")
+            if tbc not in (None, False, True, "$undefined"):
+                raise ValueError("Unknown kickoff confirmation flag")
+            event = {
+                "date": local.date().isoformat(),
+                "time": None if tbc is True or status == "Postponed" else local.strftime("%H:%M"),
+                "name": f"West Ham United v {opponent}",
+                "status": "cancelled" if status in {"Cancelled", "Canceled"} else "scheduled",
+                "sourceUrl": WEST_HAM_URL, "fixtureId": identity,
+            }
+            if identity in events and events[identity] != event:
+                raise ValueError("Conflicting fixture records")
+            events[identity] = event
+    result = sorted(events.values(), key=lambda event: (event["date"], event["name"]))
+    if not result or {event["date"][:7] for event in result} != {"2026-12", "2027-01", "2027-02"}:
+        raise ValueError("West Ham fixture response does not cover the target months")
+    return result
+
+
+def scrape_west_ham() -> list[dict]:
+    response = requests.get(WEST_HAM_URL, timeout=(10, 35))
+    response.raise_for_status()
+    return parse_west_ham_html(response.text)
+
+
+def merge_west_ham(source: dict, events: list[dict]) -> None:
+    """Update positively identified fixtures; never remove absent events."""
+    existing = source["events"]
+    for event in events:
+        matches = [old for old in existing if old.get("fixtureId") == event["fixtureId"]]
+        if not matches:
+            matches = [old for old in existing if old["name"].casefold() == event["name"].casefold()]
+            # Names can recur in cup and league games. Only migrate a legacy
+            # record when the match is unambiguous on both sides.
+            if sum(new["name"] == event["name"] for new in events) != 1:
+                raise ValueError("Ambiguous fixture names; retaining existing events")
+        if len(matches) > 1:
+            raise ValueError("Ambiguous existing fixture; retaining existing events")
+        if matches:
+            matches[0].update(event)
+        else:
+            existing.append(copy.deepcopy(event))
+    existing.sort(key=lambda event: (event["date"], event["name"]))
+
+
+def refresh_stadium_backup(source: dict) -> None:
+    backup = source.setdefault("footballRefresh", {"lastSuccessfulRefreshAt": None})
+    backup["lastAttemptAt"] = datetime.now(timezone.utc).isoformat()
+    backup["sourceUrl"] = WEST_HAM_URL
+    try:
+        events = scrape_west_ham()
+        candidate = copy.deepcopy(source)
+        merge_west_ham(candidate, events)
+        source["events"] = candidate["events"]
+        backup.update(status="success", error=None,
+                      lastSuccessfulRefreshAt=datetime.now(timezone.utc).isoformat())
+        source["refresh"]["status"] = "partial-football-refresh"
+        print(f"London Stadium: official West Ham backup refreshed {len(events)} home fixtures; full venue coverage unavailable")
+    except Exception as exc:
+        backup.update(status="error-fallback-retained", error=str(exc))
+        print(f"West Ham backup unavailable; known events retained: {exc}")
 
 
 PP_ORGANIZATION_ID = "698c9b48693e081bc997a661"
@@ -552,6 +664,8 @@ def refresh_sources(data: dict, *, stadium_only=False, phantom_only=False) -> No
         except Exception as exc:
             meta["status"] = "error-fallback-retained"
             meta["error"] = str(exc)
+            if key == "londonStadium":
+                refresh_stadium_backup(source)
             if key == "phantomPeak":
                 source["lastChecked"] = today_label()
                 source["liveSyncStatus"] = "scan-error-fallback-retained"
