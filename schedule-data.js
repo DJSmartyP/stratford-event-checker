@@ -50,7 +50,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 4
+        "missingLiveRuns": 5
       },
       {
         "date": "2026-12-11",
@@ -183,7 +183,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 4
+        "missingLiveRuns": 5
       },
       {
         "date": "2026-12-31",
@@ -192,7 +192,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 4
+        "missingLiveRuns": 5
       },
       {
         "date": "2027-01-02",
@@ -492,87 +492,71 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-06T20:28:46.046919+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-06T20:28:49.378923+00:00",
+      "lastAttemptAt": "2026-09-06T21:19:05.691172+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-06T21:19:08.409276+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     }
   },
   "londonStadium": {
     "sourceUrl": "https://www.london-stadium.com/events/all.html",
-    "lastChecked": "5 September 2026",
+    "lastChecked": "6 September 2026",
     "events": [
       {
         "date": "2026-12-08",
         "time": "20:00",
         "name": "West Ham United v Middlesbrough",
-        "status": "scheduled",
-        "sourceUrl": "https://www.whufc.com/en/matches/mens-team/fixtures",
-        "fixtureId": "17NJLrIK7PhJ0a1i85Rkxn"
+        "status": "scheduled"
       },
       {
         "date": "2026-12-12",
         "time": "15:00",
         "name": "West Ham United v Bristol City",
-        "status": "scheduled",
-        "sourceUrl": "https://www.whufc.com/en/matches/mens-team/fixtures",
-        "fixtureId": "1XiP4DmuZZwBLDBccv8tUF"
+        "status": "scheduled"
       },
       {
         "date": "2026-12-26",
         "time": "15:00",
         "name": "West Ham United v Norwich City",
-        "status": "scheduled",
-        "sourceUrl": "https://www.whufc.com/en/matches/mens-team/fixtures",
-        "fixtureId": "5TYDogSPuuQlUFul6rgNbT"
+        "status": "scheduled"
       },
       {
         "date": "2027-01-16",
         "time": "15:00",
         "name": "West Ham United v Swansea City",
-        "status": "scheduled",
-        "sourceUrl": "https://www.whufc.com/en/matches/mens-team/fixtures",
-        "fixtureId": "6RC48DvPklukYrUU7XujGP"
+        "status": "scheduled"
       },
       {
         "date": "2027-01-27",
         "time": "19:45",
         "name": "West Ham United v Cardiff City",
-        "status": "scheduled",
-        "sourceUrl": "https://www.whufc.com/en/matches/mens-team/fixtures",
-        "fixtureId": "1kaPOv1JE7DA6R5fHibeo9"
+        "status": "scheduled"
       },
       {
         "date": "2027-01-30",
         "time": "15:00",
         "name": "West Ham United v Blackburn Rovers",
-        "status": "scheduled",
-        "sourceUrl": "https://www.whufc.com/en/matches/mens-team/fixtures",
-        "fixtureId": "6Sw6qRfubEz7BxLoPK3mmK"
+        "status": "scheduled"
       },
       {
         "date": "2027-02-16",
         "time": "19:45",
         "name": "West Ham United v Lincoln City",
-        "status": "scheduled",
-        "sourceUrl": "https://www.whufc.com/en/matches/mens-team/fixtures",
-        "fixtureId": "RFpejxru4hBQU2tcDoYOi"
+        "status": "scheduled"
       },
       {
-        "date": "2027-02-21",
+        "date": "2027-02-20",
         "time": "12:00",
         "name": "West Ham United v Millwall",
-        "status": "scheduled",
-        "sourceUrl": "https://www.whufc.com/en/matches/mens-team/fixtures",
-        "fixtureId": "4oJmnBXq6fwndxVa2y2t99"
+        "status": "scheduled"
       }
     ],
     "refresh": {
-      "status": "partial-football-refresh",
-      "lastAttemptAt": "2026-09-06T20:26:54.567662+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-04T23:00:00+00:00",
+      "status": "success",
+      "lastAttemptAt": "2026-09-06T21:19:04.974484+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-06T21:19:05.691150+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
-      "error": "HTTPSConnectionPool(host='www.london-stadium.com', port=443): Max retries exceeded with url: /events/all.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.london-stadium.com', port=443) at 0x7fa947f451c0>, 'Connection to www.london-stadium.com timed out. (connect timeout=35)'))"
+      "error": null
     },
     "footballRefresh": {
       "lastSuccessfulRefreshAt": "2026-09-06T13:39:21.360576+00:00",
