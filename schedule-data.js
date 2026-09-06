@@ -50,7 +50,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 2
+        "missingLiveRuns": 3
       },
       {
         "date": "2026-12-11",
@@ -183,7 +183,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 2
+        "missingLiveRuns": 3
       },
       {
         "date": "2026-12-31",
@@ -192,7 +192,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 2
+        "missingLiveRuns": 3
       },
       {
         "date": "2027-01-02",
@@ -492,8 +492,8 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-06T12:16:57.111420+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-06T12:17:00.404541+00:00",
+      "lastAttemptAt": "2026-09-06T15:31:54.654604+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-06T15:31:57.577202+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     }
@@ -553,10 +553,10 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "error-fallback-retained",
-      "lastAttemptAt": "2026-09-06T12:15:05.499020+00:00",
+      "lastAttemptAt": "2026-09-06T15:30:02.981257+00:00",
       "lastSuccessfulRefreshAt": "2026-09-04T23:00:00+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
-      "error": "HTTPSConnectionPool(host='www.london-stadium.com', port=443): Max retries exceeded with url: /events/all.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.london-stadium.com', port=443) at 0x7fd731ca1760>, 'Connection to www.london-stadium.com timed out. (connect timeout=35)'))"
+      "error": "HTTPSConnectionPool(host='www.london-stadium.com', port=443): Max retries exceeded with url: /events/all.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.london-stadium.com', port=443) at 0x7fd17a1ed190>, 'Connection to www.london-stadium.com timed out. (connect timeout=35)'))"
     }
   }
 };
