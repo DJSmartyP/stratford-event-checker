@@ -49,8 +49,8 @@ window.CALENDAR_DATA = {
         "note": "Special event – details to be announced",
         "basis": "official-opening-schedule",
         "status": "scheduled",
-        "listingStatus": "normal",
-        "missingLiveRuns": 1
+        "listingStatus": "review",
+        "missingLiveRuns": 2
       },
       {
         "date": "2026-12-11",
@@ -182,8 +182,8 @@ window.CALENDAR_DATA = {
         "note": null,
         "basis": "official-opening-schedule",
         "status": "scheduled",
-        "listingStatus": "normal",
-        "missingLiveRuns": 1
+        "listingStatus": "review",
+        "missingLiveRuns": 2
       },
       {
         "date": "2026-12-31",
@@ -191,8 +191,8 @@ window.CALENDAR_DATA = {
         "note": "Special event – details to be announced",
         "basis": "official-opening-schedule",
         "status": "scheduled",
-        "listingStatus": "normal",
-        "missingLiveRuns": 1
+        "listingStatus": "review",
+        "missingLiveRuns": 2
       },
       {
         "date": "2027-01-02",
@@ -492,8 +492,8 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-06T12:12:05.878787+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-06T12:12:08.792606+00:00",
+      "lastAttemptAt": "2026-09-06T12:16:57.111420+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-06T12:17:00.404541+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     }
@@ -553,10 +553,10 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "error-fallback-retained",
-      "lastAttemptAt": "2026-09-06T11:41:21.706158+00:00",
+      "lastAttemptAt": "2026-09-06T12:15:05.499020+00:00",
       "lastSuccessfulRefreshAt": "2026-09-04T23:00:00+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
-      "error": "HTTPSConnectionPool(host='www.london-stadium.com', port=443): Max retries exceeded with url: /events/all.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.london-stadium.com', port=443) at 0x7f6a40fcfc50>, 'Connection to www.london-stadium.com timed out. (connect timeout=35)'))"
+      "error": "HTTPSConnectionPool(host='www.london-stadium.com', port=443): Max retries exceeded with url: /events/all.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.london-stadium.com', port=443) at 0x7fd731ca1760>, 'Connection to www.london-stadium.com timed out. (connect timeout=35)'))"
     }
   }
 };
