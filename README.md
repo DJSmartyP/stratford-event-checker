@@ -53,7 +53,13 @@ The action opens Phantom Peak's public ticket page using a headless Chromium bro
 
 `https://www.phantompeak.com/tickets/?flow=lyTxE9UF`
 
-It looks for the public performance calendar in the page, embedded frames and booking-related network responses.
+It waits for the official page's On The Stage widget response and parses explicit
+event IDs, start timestamps and statuses. This works with the widget's shadow
+DOM without clicking through month headings or mixing unrelated timestamps.
+The response must belong to Phantom Peak, each production's date inventory must
+match its event records, and the existing full-range coverage checks must pass.
+Malformed or incomplete responses retain the known schedule. Times are converted
+to Europe/London; sold-out and off-sale events are still performances.
 
 The update policy is intentionally cautious:
 
@@ -147,7 +153,9 @@ The workflow also uploads a temporary artifact called:
 
 `phantom-peak-scan-diagnostics`
 
-That artifact contains a public-page text snapshot and screenshot that can be used to adjust the reader if On The Stage or Phantom Peak change the booking interface. It expires after seven days and is not published on the website.
+That artifact contains a scan summary with the extracted date/time pairs and a
+page screenshot (or an error report if extraction failed). It expires after
+seven days and is not published on the website.
 
 # Editing dates manually
 

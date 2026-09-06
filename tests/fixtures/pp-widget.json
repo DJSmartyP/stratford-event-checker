@@ -1,0 +1,475 @@
+{
+  "productions": [
+    {
+      "_id": "6a7c47aed996e09215058dfc",
+      "name": "The Great Redoing",
+      "timezone": "Europe/London",
+      "dates": [
+        "2026-12-04T18:00:00.000Z",
+        "2026-12-05T18:00:00.000Z",
+        "2026-12-11T18:00:00.000Z",
+        "2026-12-18T18:00:00.000Z",
+        "2026-12-19T18:00:00.000Z",
+        "2027-01-02T18:00:00.000Z",
+        "2027-01-08T18:00:00.000Z",
+        "2027-01-09T18:00:00.000Z",
+        "2027-01-15T18:00:00.000Z",
+        "2027-01-16T18:00:00.000Z",
+        "2027-01-22T18:00:00.000Z",
+        "2027-01-23T18:00:00.000Z",
+        "2027-01-29T18:00:00.000Z",
+        "2027-01-30T18:00:00.000Z",
+        "2027-02-05T18:00:00.000Z",
+        "2027-02-06T18:00:00.000Z",
+        "2027-02-12T18:00:00.000Z",
+        "2027-02-13T18:00:00.000Z",
+        "2027-02-19T18:00:00.000Z",
+        "2027-02-20T18:00:00.000Z",
+        "2027-02-26T18:00:00.000Z",
+        "2027-02-27T18:00:00.000Z",
+        "2026-12-05T12:00:00.000Z",
+        "2026-12-06T12:00:00.000Z",
+        "2026-12-13T12:00:00.000Z",
+        "2026-12-19T12:00:00.000Z",
+        "2026-12-20T12:00:00.000Z",
+        "2026-12-27T12:00:00.000Z",
+        "2027-01-02T12:00:00.000Z",
+        "2027-01-03T12:00:00.000Z",
+        "2027-01-09T12:00:00.000Z",
+        "2027-01-10T12:00:00.000Z",
+        "2027-01-16T12:00:00.000Z",
+        "2027-01-17T12:00:00.000Z",
+        "2027-01-23T12:00:00.000Z",
+        "2027-01-24T12:00:00.000Z",
+        "2027-01-30T12:00:00.000Z",
+        "2027-01-31T12:00:00.000Z",
+        "2027-02-06T12:00:00.000Z",
+        "2027-02-07T12:00:00.000Z",
+        "2027-02-13T12:00:00.000Z",
+        "2027-02-14T12:00:00.000Z",
+        "2027-02-20T12:00:00.000Z",
+        "2027-02-21T12:00:00.000Z",
+        "2027-02-27T12:00:00.000Z",
+        "2027-02-28T12:00:00.000Z",
+        "2026-12-12T18:00:00.000Z",
+        "2026-12-24T12:00:00.000Z",
+        "2026-12-23T12:00:00.000Z",
+        "2026-12-28T12:00:00.000Z",
+        "2026-12-29T12:00:00.000Z"
+      ],
+      "organization": {
+        "_id": "698c9b48693e081bc997a661"
+      },
+      "events": [
+        {
+          "id": 181811,
+          "start_date": "2026-12-04T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181833,
+          "start_date": "2026-12-05T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181812,
+          "start_date": "2026-12-05T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181834,
+          "start_date": "2026-12-06T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181813,
+          "start_date": "2026-12-11T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181857,
+          "start_date": "2026-12-12T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181835,
+          "start_date": "2026-12-13T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181814,
+          "start_date": "2026-12-18T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181836,
+          "start_date": "2026-12-19T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181815,
+          "start_date": "2026-12-19T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181837,
+          "start_date": "2026-12-20T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181859,
+          "start_date": "2026-12-23T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181858,
+          "start_date": "2026-12-24T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181838,
+          "start_date": "2026-12-27T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181860,
+          "start_date": "2026-12-28T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181861,
+          "start_date": "2026-12-29T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181839,
+          "start_date": "2027-01-02T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181816,
+          "start_date": "2027-01-02T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181840,
+          "start_date": "2027-01-03T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181817,
+          "start_date": "2027-01-08T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181841,
+          "start_date": "2027-01-09T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181818,
+          "start_date": "2027-01-09T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181842,
+          "start_date": "2027-01-10T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181819,
+          "start_date": "2027-01-15T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181843,
+          "start_date": "2027-01-16T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181820,
+          "start_date": "2027-01-16T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181844,
+          "start_date": "2027-01-17T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181821,
+          "start_date": "2027-01-22T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181845,
+          "start_date": "2027-01-23T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181822,
+          "start_date": "2027-01-23T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181846,
+          "start_date": "2027-01-24T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181823,
+          "start_date": "2027-01-29T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181847,
+          "start_date": "2027-01-30T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181824,
+          "start_date": "2027-01-30T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181848,
+          "start_date": "2027-01-31T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181825,
+          "start_date": "2027-02-05T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181849,
+          "start_date": "2027-02-06T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181826,
+          "start_date": "2027-02-06T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181850,
+          "start_date": "2027-02-07T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181827,
+          "start_date": "2027-02-12T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181851,
+          "start_date": "2027-02-13T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181828,
+          "start_date": "2027-02-13T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181852,
+          "start_date": "2027-02-14T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181829,
+          "start_date": "2027-02-19T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181853,
+          "start_date": "2027-02-20T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181830,
+          "start_date": "2027-02-20T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181854,
+          "start_date": "2027-02-21T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181831,
+          "start_date": "2027-02-26T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181855,
+          "start_date": "2027-02-27T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181832,
+          "start_date": "2027-02-27T18:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        },
+        {
+          "id": 181856,
+          "start_date": "2027-02-28T12:00:00.000Z",
+          "timezone": "Europe/London",
+          "event_status": "Online-Open",
+          "is_off_sale": false,
+          "tickets_purchasable": true
+        }
+      ]
+    }
+  ]
+}

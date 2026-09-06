@@ -6,8 +6,8 @@ window.CALENDAR_DATA = {
   "phantomPeak": {
     "sourceUrl": "https://www.phantompeak.com/tickets/?flow=lyTxE9UF",
     "lastChecked": "6 September 2026",
-    "lastSuccessfulLiveSync": null,
-    "liveSyncStatus": "scan-failed-fallback-retained",
+    "lastSuccessfulLiveSync": "6 September 2026",
+    "liveSyncStatus": "live-calendar",
     "performances": [
       {
         "date": "2026-12-04",
@@ -15,7 +15,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -27,7 +27,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -38,7 +38,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -50,7 +50,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "normal",
-        "missingLiveRuns": 0
+        "missingLiveRuns": 1
       },
       {
         "date": "2026-12-11",
@@ -58,7 +58,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -69,7 +69,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -80,7 +80,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -91,7 +91,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -103,7 +103,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -114,7 +114,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -125,7 +125,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -136,7 +136,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -147,7 +147,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -158,7 +158,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -169,7 +169,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -183,7 +183,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "normal",
-        "missingLiveRuns": 0
+        "missingLiveRuns": 1
       },
       {
         "date": "2026-12-31",
@@ -192,7 +192,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "normal",
-        "missingLiveRuns": 0
+        "missingLiveRuns": 1
       },
       {
         "date": "2027-01-02",
@@ -201,7 +201,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -212,7 +212,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "official-opening-schedule",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -223,7 +223,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -235,7 +235,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -246,7 +246,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -257,7 +257,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -269,7 +269,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -280,7 +280,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -291,7 +291,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -303,7 +303,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -314,7 +314,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -325,7 +325,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -337,7 +337,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -348,7 +348,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -359,7 +359,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -371,7 +371,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -382,7 +382,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -393,7 +393,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -405,7 +405,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -416,7 +416,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -427,7 +427,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -439,7 +439,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -450,7 +450,7 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -461,7 +461,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -473,7 +473,7 @@ window.CALENDAR_DATA = {
           "18:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
@@ -484,18 +484,18 @@ window.CALENDAR_DATA = {
           "12:00"
         ],
         "note": null,
-        "basis": "published-standard-pattern",
+        "basis": "live-ticketing",
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
       }
     ],
     "refresh": {
-      "status": "fallback-retained",
-      "lastAttemptAt": "2026-09-06T11:43:13.285417+00:00",
-      "lastSuccessfulRefreshAt": null,
+      "status": "success",
+      "lastAttemptAt": "2026-09-06T12:12:05.878787+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-06T12:12:08.792606+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
-      "error": "Full-range live scan could not be verified"
+      "error": null
     }
   },
   "londonStadium": {
