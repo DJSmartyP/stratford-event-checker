@@ -5,7 +5,7 @@ window.CALENDAR_DATA = {
   },
   "phantomPeak": {
     "sourceUrl": "https://www.phantompeak.com/tickets/?flow=lyTxE9UF",
-    "lastChecked": "5 September 2026",
+    "lastChecked": "6 September 2026",
     "lastSuccessfulLiveSync": null,
     "liveSyncStatus": "scan-failed-fallback-retained",
     "performances": [
@@ -489,7 +489,14 @@ window.CALENDAR_DATA = {
         "listingStatus": "normal",
         "missingLiveRuns": 0
       }
-    ]
+    ],
+    "refresh": {
+      "status": "fallback-retained",
+      "lastAttemptAt": "2026-09-06T11:43:13.285417+00:00",
+      "lastSuccessfulRefreshAt": null,
+      "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
+      "error": "Full-range live scan could not be verified"
+    }
   },
   "londonStadium": {
     "sourceUrl": "https://www.london-stadium.com/events/all.html",
@@ -543,6 +550,13 @@ window.CALENDAR_DATA = {
         "name": "West Ham United v Millwall",
         "status": "scheduled"
       }
-    ]
+    ],
+    "refresh": {
+      "status": "error-fallback-retained",
+      "lastAttemptAt": "2026-09-06T11:41:21.706158+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-04T23:00:00+00:00",
+      "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
+      "error": "HTTPSConnectionPool(host='www.london-stadium.com', port=443): Max retries exceeded with url: /events/all.html (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.london-stadium.com', port=443) at 0x7f6a40fcfc50>, 'Connection to www.london-stadium.com timed out. (connect timeout=35)'))"
+    }
   }
 };
