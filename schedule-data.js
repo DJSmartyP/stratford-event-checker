@@ -5,8 +5,8 @@ window.CALENDAR_DATA = {
   },
   "phantomPeak": {
     "sourceUrl": "https://www.phantompeak.com/tickets/?flow=lyTxE9UF",
-    "lastChecked": "6 September 2026",
-    "lastSuccessfulLiveSync": "6 September 2026",
+    "lastChecked": "7 September 2026",
+    "lastSuccessfulLiveSync": "7 September 2026",
     "liveSyncStatus": "live-calendar",
     "performances": [
       {
@@ -50,7 +50,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 5
+        "missingLiveRuns": 6
       },
       {
         "date": "2026-12-11",
@@ -183,7 +183,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 5
+        "missingLiveRuns": 6
       },
       {
         "date": "2026-12-31",
@@ -192,7 +192,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 5
+        "missingLiveRuns": 6
       },
       {
         "date": "2027-01-02",
@@ -492,15 +492,15 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-06T21:19:05.691172+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-06T21:19:08.409276+00:00",
+      "lastAttemptAt": "2026-09-07T04:46:05.632303+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-07T04:46:08.558897+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     }
   },
   "londonStadium": {
     "sourceUrl": "https://www.london-stadium.com/events/all.html",
-    "lastChecked": "6 September 2026",
+    "lastChecked": "7 September 2026",
     "events": [
       {
         "date": "2026-12-08",
@@ -553,8 +553,8 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-06T21:19:04.974484+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-06T21:19:05.691150+00:00",
+      "lastAttemptAt": "2026-09-07T04:46:04.588957+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-07T04:46:05.632285+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     },
