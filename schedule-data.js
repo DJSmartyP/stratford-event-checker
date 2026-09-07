@@ -44,15 +44,6 @@ window.CALENDAR_DATA = {
         "missingLiveRuns": 0
       },
       {
-        "date": "2026-12-09",
-        "times": [],
-        "note": "Special event â€“ details to be announced",
-        "basis": "official-opening-schedule",
-        "status": "scheduled",
-        "listingStatus": "review",
-        "missingLiveRuns": 8
-      },
-      {
         "date": "2026-12-11",
         "times": [
           "18:00"
@@ -173,26 +164,6 @@ window.CALENDAR_DATA = {
         "status": "scheduled",
         "listingStatus": "normal",
         "missingLiveRuns": 0
-      },
-      {
-        "date": "2026-12-30",
-        "times": [
-          "12:00"
-        ],
-        "note": null,
-        "basis": "official-opening-schedule",
-        "status": "scheduled",
-        "listingStatus": "review",
-        "missingLiveRuns": 8
-      },
-      {
-        "date": "2026-12-31",
-        "times": [],
-        "note": "Special event â€“ details to be announced",
-        "basis": "official-opening-schedule",
-        "status": "scheduled",
-        "listingStatus": "review",
-        "missingLiveRuns": 8
       },
       {
         "date": "2027-01-02",
@@ -492,8 +463,8 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-07T07:42:04.815519+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-07T07:42:07.844994+00:00",
+      "lastAttemptAt": "2026-09-07T07:44:14.501626+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-07T07:44:24.085573+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     }
