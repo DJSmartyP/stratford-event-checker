@@ -19,7 +19,7 @@ The site covers **4 December 2026 to 28 February 2027** and opens on Phantom Pea
 
 The current-travel panel reads TfL Open Data when the page opens and every five
 minutes while visible, with a refresh on return to an overdue tab. It covers
-Central, Jubilee, Elizabeth line, DLR and Mildmay; Stratford station and both bus
+all 11 Tube lines, all six Overground lines, Elizabeth line and DLR; Stratford station and both bus
 stations; Stratford International DLR and its bus stops. Bus route notices may
 describe disruptions elsewhere on routes serving Stratford. National Rail,
 Southeastern, parking, roads and shopping-centre access are not covered.

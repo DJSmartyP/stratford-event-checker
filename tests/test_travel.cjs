@@ -52,3 +52,15 @@ test('stale and invalid timestamps are flagged',()=>{
   assert.ok(t.stale({status:'success',checkedAt:'invalid'},1000));
   assert.ok(t.stale({status:'unavailable',checkedAt:new Date().toISOString()},1000));
 });
+
+test('live rail covers the whole network while planned checks remain local', async()=>{
+  const full=t.LIVE_RAIL.map(id=>({id,name:id,lineStatuses:[{statusSeverity:10}]}));
+  full.find(l=>l.id==='lioness').lineStatuses=[{statusSeverity:6,reason:'Delays'}];
+  assert.equal(t.railNotices(full,false)[0].service,'lioness');
+  assert.throws(()=>t.railNotices(rails(),false));
+  assert.deepEqual(t.railNotices(rails(),true),[]);
+  const urls=[];
+  await t.collect({fetcher:async url=>{urls.push(url);return {ok:true,json:async()=>url.includes('/Mode/')?full:url.includes('/StopPoint/')?{disruptions:[],children:[]}:[]};}});
+  assert.ok(urls.some(url=>url.includes('/Line/Mode/tube,overground,elizabeth-line,dlr/Status')));
+  assert.equal(urls.filter(url=>url.includes('/Disruption') && url.includes('/Line/')).length,2);
+});

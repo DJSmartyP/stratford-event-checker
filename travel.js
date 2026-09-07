@@ -10,7 +10,7 @@
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const stamp=value=>value?new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/London',timeZoneName:'short'}).format(new Date(value)):'not yet available';
   function noticeMarkup(notice,outdated=false,isPlanned=false) {
-    const service=['central','jubilee','dlr','elizabeth','mildmay','bus'].includes(notice.service)
+    const service=[...core.LIVE_RAIL,'bus'].includes(notice.service)
       ? notice.service : (/bus/i.test(notice.title)?'bus':'station');
     return `<details class="travel-notice travel-${service}"><summary>⚠ ${isPlanned?'Planned travel: ':''}${esc(notice.title)}${outdated?' · update overdue':''}</summary><p>${esc(notice.detail)}</p><p class="travel-scope">${esc(notice.scope)}</p>${notice.start?`<p class="travel-scope">${esc(stamp(notice.start))} – ${esc(stamp(notice.end))}</p>`:''}</details>`;
   }
@@ -48,7 +48,7 @@
     panel.innerHTML=`<p class="travel-check">Last available check: ${esc(stamp(oldest))} · refreshes every 5 minutes while this page is open</p>`+
       (failed.length?`<p class="travel-unavailable">Some travel updates are unavailable or overdue. Earlier notices may be shown; this is not confirmation of normal service.</p><details class="travel-coverage"><summary>Unavailable checks (${failed.length})</summary><p>${esc(failed.map(g=>g.label).join('; '))}</p></details>`:'')+
       (notices.length?notices.map(n=>noticeMarkup(n,failed.length>0)).join(''):failed.length?'':'<p>No current disruptions reported by the checked TfL feeds.</p>')+
-      `<details class="travel-coverage"><summary>Services checked for Westfield Stratford City</summary><p>Stratford Underground, Elizabeth line, Mildmay and DLR; Stratford International DLR; Stratford City and Stratford bus stations; Stratford International bus stops.</p><p>Bus routes: ${esc(core.BUSES.join(', ').toUpperCase())}. Route-wide notices can describe problems away from Westfield.</p><p>National Rail and Southeastern services, roads, parking and Westfield access are not covered.</p></details>`;
+      `<details class="travel-coverage"><summary>Services checked: all TfL rail and local buses</summary><p>All 11 Underground lines, all six Overground lines, Elizabeth line and DLR. Station and bus-stop notices remain local: Stratford, Stratford International and nearby bus stations.</p><p>Bus routes: ${esc(core.BUSES.join(', ').toUpperCase())}. Route-wide notices can describe problems away from Westfield.</p><p>National Rail and Southeastern services, roads, parking and Westfield access are not covered.</p></details>`;
   }
   async function refreshCurrent() {
     if(currentBusy)return;

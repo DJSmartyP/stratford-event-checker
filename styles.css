@@ -819,3 +819,20 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 .travel-status-issues, .travel-status-unavailable { background: #fff0ce; border-color: #a06b16; }
 .travel-status-clear { background: #edf5ee; border-color: #48764c; }
 #travelInfo { scroll-margin-top: 20px; }
+
+.travel-bakerloo { --travel-line: #b36305; }
+.travel-circle { --travel-line: #ffd300; }
+.travel-district { --travel-line: #00782a; }
+.travel-hammersmith-city { --travel-line: #f3a9bb; }
+.travel-metropolitan { --travel-line: #9b0056; }
+.travel-northern { --travel-line: #000000; }
+.travel-piccadilly { --travel-line: #003688; }
+.travel-victoria { --travel-line: #0098d4; }
+.travel-waterloo-city { --travel-line: #95cdba; }
+.travel-liberty { --travel-line: #61686b; }
+.travel-lioness { --travel-line: #eea700; }
+.travel-suffragette { --travel-line: #18a95d; }
+.travel-weaver { --travel-line: #9b0058; }
+.travel-windrush { --travel-line: #ef7b10; }
+/* Keep local buses distinct from the expanded rail palette. */
+.travel-bus { --travel-line: #665075; }

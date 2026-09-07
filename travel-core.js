@@ -3,6 +3,7 @@
   'use strict';
   const API = 'https://api.tfl.gov.uk';
   const RAIL = ['central', 'jubilee', 'dlr', 'elizabeth', 'mildmay'];
+  const LIVE_RAIL = ['bakerloo','central','circle','district','dlr','elizabeth','hammersmith-city','jubilee','liberty','lioness','metropolitan','mildmay','northern','piccadilly','suffragette','victoria','waterloo-city','weaver','windrush'];
   // TfL HUBSRA family: Stratford and Stratford City bus stations.
   const BUSES = ['104','108','158','238','241','25','257','262','276','308','339','388','425','473','678','69','86','97','d8','n205','n25','n8','n86'];
   const londonDate = value => new Intl.DateTimeFormat('en-CA', {
@@ -27,7 +28,7 @@
     return [...new Map(notices.map(n => [JSON.stringify(n), n])).values()];
   }
   function railNotices(data, planned) {
-    if (!Array.isArray(data) || RAIL.some(id => !data.some(line => line.id === id))) throw Error('Incomplete rail response');
+    if (!Array.isArray(data) || (planned ? RAIL : LIVE_RAIL).some(id => !data.some(line => line.id === id))) throw Error('Incomplete rail response');
     const notices = [];
     for (const line of data) {
       if (!Array.isArray(line.lineStatuses) || !line.lineStatuses.length) throw Error('Missing line status');
@@ -44,7 +45,7 @@
           if (planned && !dates.start) continue;
           notices.push({ service: line.id, title: `${line.name} · ${status.statusSeverityDescription || 'Service notice'}`,
             detail: status.reason || disruption.description || 'See TfL for details.',
-            scope: 'Line-wide notice; may affect journeys to Stratford', ...dates });
+            scope: planned ? 'Line-wide notice; may affect journeys to Stratford' : 'Network-wide rail status; disruption may be away from Stratford', ...dates });
         }
       }
     }
@@ -83,7 +84,7 @@
     const end = planned ? new Date(Date.parse(range.end+'T00:00:00Z')+86400000).toISOString().slice(0,10) : null;
     const railPath = planned ? `/Status/${range.start}/to/${end}?detail=true` : '/Status?detail=true';
     return [
-      { id:'rail', label:'Central, Jubilee, Elizabeth line, DLR and Mildmay', path:`/Line/${RAIL.join(',')}${railPath}`, parse:d=>railNotices(d,planned) },
+      { id:'rail', label:planned?'Central, Jubilee, Elizabeth line, DLR and Mildmay':'All TfL Tube, Overground, Elizabeth line and DLR lines', path:planned?`/Line/${RAIL.join(',')}${railPath}`:'/Line/Mode/tube,overground,elizabeth-line,dlr/Status?detail=true', parse:d=>railNotices(d,planned) },
       ...[BUSES.slice(0,16),BUSES.slice(16)].map((ids,i)=>({id:`buses${i}`,label:`Bus routes ${ids.join(', ').toUpperCase()}`,path:`/Line/${ids.join(',')}/Disruption`,parse:d=>busNotices(d,planned)})),
       {id:'stratford',label:'Stratford station and both bus stations',path:'/StopPoint/HUBSRA/Disruption?getFamily=true',parse:d=>stopNotices(d,'Stratford',planned)},
       {id:'international',label:'Stratford International DLR',path:'/StopPoint/940GZZDLSIT/Disruption?getFamily=true',parse:d=>stopNotices(d,'Stratford International DLR',planned)},
@@ -109,7 +110,7 @@
   function stale(group, age, now=Date.now()) {
     return group.status !== 'success' || !Number.isFinite(Date.parse(group.checkedAt)) || now-Date.parse(group.checkedAt)>age;
   }
-  const api={collect,onDate,active,stale,unique,railNotices,busNotices,stopNotices,RAIL,BUSES};
+  const api={collect,onDate,active,stale,unique,railNotices,busNotices,stopNotices,RAIL,LIVE_RAIL,BUSES};
   if (typeof module !== 'undefined' && module.exports) module.exports=api;
   else root.StratfordTravel=api;
 })(typeof window !== 'undefined' ? window : globalThis);
