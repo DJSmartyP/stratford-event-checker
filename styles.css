@@ -803,3 +803,19 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
     font-size: 1rem;
   }
 }
+
+/* TfL line accents; text remains dark and readable on a pale background. */
+.travel-notice { border-left: 7px solid var(--travel-line, #766583); background: #fffaf0; color: #302838; }
+.travel-central { --travel-line: #e32017; }
+.travel-jubilee { --travel-line: #a0a5a9; }
+.travel-dlr { --travel-line: #00a4a7; }
+.travel-elizabeth { --travel-line: #773dbd; }
+.travel-mildmay { --travel-line: #0067a5; }
+.travel-bus { --travel-line: #b56b08; }
+.travel-status-bar { margin: 18px 0; background: #eee9f3; border: 1px solid #81728c; border-left-width: 6px; }
+.travel-status-bar a { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 18px; padding: 14px 16px; color: #352940; line-height: 1.4; text-decoration: none; }
+.travel-status-bar a span { text-decoration: underline; }
+.travel-status-bar a:focus-visible { outline: 3px solid #4d087d; outline-offset: 3px; }
+.travel-status-issues, .travel-status-unavailable { background: #fff0ce; border-color: #a06b16; }
+.travel-status-clear { background: #edf5ee; border-color: #48764c; }
+#travelInfo { scroll-margin-top: 20px; }

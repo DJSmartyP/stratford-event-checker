@@ -42,7 +42,7 @@
         for (const p of periods) {
           const dates = period(p.fromDate, p.toDate);
           if (planned && !dates.start) continue;
-          notices.push({ title: `${line.name} · ${status.statusSeverityDescription || 'Service notice'}`,
+          notices.push({ service: line.id, title: `${line.name} · ${status.statusSeverityDescription || 'Service notice'}`,
             detail: status.reason || disruption.description || 'See TfL for details.',
             scope: 'Line-wide notice; may affect journeys to Stratford', ...dates });
         }
@@ -58,7 +58,7 @@
       if (planned && (d.category !== 'PlannedWork' || !dates.start)) return [];
       // The bus API often supplies no validity dates. Such notices are current
       // only and are never assigned to a future performance tile.
-      return [{ title: 'Bus route disruption', detail: d.description,
+      return [{ service: 'bus', title: 'Bus route disruption', detail: d.description,
         scope: 'Route serving Stratford; disruption may be elsewhere on the route', ...dates }];
     });
   }

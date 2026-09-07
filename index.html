@@ -35,6 +35,8 @@
         <p><strong>Every dated London Stadium event is included.</strong> If the Stadium has not published a start time yet, it will appear as <strong>Time TBC</strong> and update automatically when details are added.</p>
       </section>
 
+      <div id="travelStatusBar" class="travel-status-bar" aria-live="polite"><a href="#travelInfo">Travel now: checking TfL… · View travel information ↓</a></div>
+
       <section class="week-picker" aria-label="Week navigation">
         <button id="prevWeek" class="nav-button" type="button" aria-label="View previous week">← Previous week</button>
         <div class="week-heading" aria-live="polite">
@@ -49,7 +51,7 @@
       <p id="plannedTravelStatus" class="travel-check">Planned travel notices: checking for updates…</p>
       <section id="schedule" class="schedule-list" aria-label="Phantom Peak performances"></section>
 
-      <section class="travel-panel" aria-labelledby="travelHeading">
+      <section id="travelInfo" class="travel-panel" aria-labelledby="travelHeading">
         <h2 id="travelHeading">Getting to Westfield Stratford City</h2>
         <p>Current travel status · conditions now, not a forecast for your visit date.</p>
         <div id="currentTravel" aria-live="polite"></div>

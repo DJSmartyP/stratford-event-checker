@@ -2,6 +2,7 @@
   'use strict';
   const core=window.StratfordTravel;
   const panel=document.getElementById('currentTravel');
+  const statusBar=document.getElementById('travelStatusBar');
   const plannedStatus=document.getElementById('plannedTravelStatus');
   if (!core || !panel) return;
   const FIVE_MINUTES=5*60*1000, SIX_HOURS=6*60*60*1000;
@@ -9,7 +10,9 @@
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const stamp=value=>value?new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'Europe/London',timeZoneName:'short'}).format(new Date(value)):'not yet available';
   function noticeMarkup(notice,outdated=false,isPlanned=false) {
-    return `<details class="travel-notice"><summary>⚠ ${isPlanned?'Planned travel: ':''}${esc(notice.title)}${outdated?' · update overdue':''}</summary><p>${esc(notice.detail)}</p><p class="travel-scope">${esc(notice.scope)}</p>${notice.start?`<p class="travel-scope">${esc(stamp(notice.start))} – ${esc(stamp(notice.end))}</p>`:''}</details>`;
+    const service=['central','jubilee','dlr','elizabeth','mildmay','bus'].includes(notice.service)
+      ? notice.service : (/bus/i.test(notice.title)?'bus':'station');
+    return `<details class="travel-notice travel-${service}"><summary>⚠ ${isPlanned?'Planned travel: ':''}${esc(notice.title)}${outdated?' · update overdue':''}</summary><p>${esc(notice.detail)}</p><p class="travel-scope">${esc(notice.scope)}</p>${notice.start?`<p class="travel-scope">${esc(stamp(notice.start))} – ${esc(stamp(notice.end))}</p>`:''}</details>`;
   }
   function renderPlanned() {
     const groups=planned?.groups || [];
@@ -33,6 +36,15 @@
     const failed=groups.filter(g=>core.stale(g,FIVE_MINUTES*2));
     const notices=core.unique(groups.flatMap(g=>g.notices.filter(n=>core.active(n))));
     const oldest=groups.map(g=>g.checkedAt).filter(Boolean).sort()[0];
+    const state=failed.length?'unavailable':notices.length?'issues':'clear';
+    const message=failed.length
+      ? (notices.length?'Travel now: notices reported · some updates unavailable':'Travel now: updates unavailable')
+      : notices.length?`Travel now: ${notices.length} disruption notice${notices.length===1?'':'s'} reported`
+      :'Travel now: no disruptions reported by checked TfL feeds';
+    if(statusBar) {
+      statusBar.className=`travel-status-bar travel-status-${state}`;
+      statusBar.innerHTML=`<a href="#travelInfo"><strong>${esc(message)}</strong><span>View travel information below ↓</span></a>`;
+    }
     panel.innerHTML=`<p class="travel-check">Last available check: ${esc(stamp(oldest))} · refreshes every 5 minutes while this page is open</p>`+
       (failed.length?`<p class="travel-unavailable">Some travel updates are unavailable or overdue. Earlier notices may be shown; this is not confirmation of normal service.</p><details class="travel-coverage"><summary>Unavailable checks (${failed.length})</summary><p>${esc(failed.map(g=>g.label).join('; '))}</p></details>`:'')+
       (notices.length?notices.map(n=>noticeMarkup(n,failed.length>0)).join(''):failed.length?'':'<p>No current disruptions reported by the checked TfL feeds.</p>')+
