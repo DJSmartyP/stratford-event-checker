@@ -50,7 +50,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 7
+        "missingLiveRuns": 8
       },
       {
         "date": "2026-12-11",
@@ -183,7 +183,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 7
+        "missingLiveRuns": 8
       },
       {
         "date": "2026-12-31",
@@ -192,7 +192,7 @@ window.CALENDAR_DATA = {
         "basis": "official-opening-schedule",
         "status": "scheduled",
         "listingStatus": "review",
-        "missingLiveRuns": 7
+        "missingLiveRuns": 8
       },
       {
         "date": "2027-01-02",
@@ -492,8 +492,8 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-07T05:38:59.416203+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-07T05:39:03.543838+00:00",
+      "lastAttemptAt": "2026-09-07T07:42:04.815519+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-07T07:42:07.844994+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     }
@@ -553,8 +553,8 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-07T05:38:58.484730+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-07T05:38:59.416184+00:00",
+      "lastAttemptAt": "2026-09-07T07:42:04.033135+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-07T07:42:04.815502+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     },
