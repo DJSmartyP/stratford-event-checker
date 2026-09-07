@@ -3,13 +3,13 @@
     "start": "2026-12-04",
     "end": "2027-02-28"
   },
-  "attemptedAt": "2026-09-07T12:57:48.775Z",
+  "attemptedAt": "2026-09-07T21:44:29.585Z",
   "groups": [
     {
       "id": "rail",
       "label": "Central, Jubilee, Elizabeth line, DLR and Mildmay",
       "status": "success",
-      "checkedAt": "2026-09-07T12:57:48.775Z",
+      "checkedAt": "2026-09-07T21:44:29.585Z",
       "error": null,
       "notices": []
     },
@@ -17,7 +17,7 @@
       "id": "buses0",
       "label": "Bus routes 104, 108, 158, 238, 241, 25, 257, 262, 276, 308, 339, 388, 425, 473, 678, 69",
       "status": "success",
-      "checkedAt": "2026-09-07T12:57:48.775Z",
+      "checkedAt": "2026-09-07T21:44:29.585Z",
       "error": null,
       "notices": []
     },
@@ -25,7 +25,7 @@
       "id": "buses1",
       "label": "Bus routes 86, 97, D8, N205, N25, N8, N86",
       "status": "success",
-      "checkedAt": "2026-09-07T12:57:48.775Z",
+      "checkedAt": "2026-09-07T21:44:29.585Z",
       "error": null,
       "notices": []
     },
@@ -33,23 +33,15 @@
       "id": "stratford",
       "label": "Stratford station and both bus stations",
       "status": "success",
-      "checkedAt": "2026-09-07T12:57:48.775Z",
+      "checkedAt": "2026-09-07T21:44:29.585Z",
       "error": null,
-      "notices": [
-        {
-          "title": "Stratford (London) Rail Station",
-          "detail": "Severe delays between Heathrow Terminals 2&3 and Heathrow Terminal 5 while we fix equipment damaged by vandalism in the Kensal Green area. Customers should use Piccadilly line to travel to Heathrow Airport and use the free interchange service to travel between terminals. MINOR DELAYS between Hayes & Harlington and Reading due to an earlier a vehicle hitting a bridge earlier at Burnham and MINOR DELAYS between Shenfield and Whitechapel due to an earlier signal system failure at Ilford. GOOD SERVICE on the rest of the line. ",
-          "scope": "minorDelays",
-          "start": "2026-09-07T11:41:00.000Z",
-          "end": "2026-09-08T00:29:00.000Z"
-        }
-      ]
+      "notices": []
     },
     {
       "id": "international",
       "label": "Stratford International DLR",
       "status": "success",
-      "checkedAt": "2026-09-07T12:57:48.775Z",
+      "checkedAt": "2026-09-07T21:44:29.585Z",
       "error": null,
       "notices": []
     },
@@ -57,7 +49,7 @@
       "id": "490002268YY",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-09-07T12:57:48.775Z",
+      "checkedAt": "2026-09-07T21:44:29.585Z",
       "error": null,
       "notices": []
     },
@@ -65,7 +57,7 @@
       "id": "490002268ZZ",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-09-07T12:57:48.775Z",
+      "checkedAt": "2026-09-07T21:44:29.585Z",
       "error": null,
       "notices": []
     },
@@ -73,7 +65,7 @@
       "id": "490018554C",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-09-07T12:57:48.775Z",
+      "checkedAt": "2026-09-07T21:44:29.585Z",
       "error": null,
       "notices": []
     },
@@ -81,7 +73,7 @@
       "id": "490018554E",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-09-07T12:57:48.775Z",
+      "checkedAt": "2026-09-07T21:44:29.585Z",
       "error": null,
       "notices": []
     }
