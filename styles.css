@@ -845,3 +845,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 .travel-victoria, .travel-waterloo-city, .travel-lioness,
 .travel-suffragette, .travel-windrush { --travel-text: #111; }
 .travel-notice summary:focus-visible { outline: 3px solid #111; outline-offset: 3px; }
+
+.travel-status-issues { background: #b91c1c; border-color: #991b1b; }
+.travel-status-clear { background: #166534; border-color: #14532d; }
+.travel-status-issues a, .travel-status-clear a { color: #fff; }

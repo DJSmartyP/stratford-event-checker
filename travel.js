@@ -36,7 +36,7 @@
     const failed=groups.filter(g=>core.stale(g,FIVE_MINUTES*2));
     const notices=core.unique(groups.flatMap(g=>g.notices.filter(n=>core.active(n))));
     const oldest=groups.map(g=>g.checkedAt).filter(Boolean).sort()[0];
-    const state=failed.length?'unavailable':notices.length?'issues':'clear';
+    const state=notices.length?'issues':failed.length?'unavailable':'clear';
     const message=failed.length
       ? (notices.length?'Travel now: notices reported · some updates unavailable':'Travel now: updates unavailable')
       : notices.length?`Travel now: ${notices.length} disruption notice${notices.length===1?'':'s'} reported`
