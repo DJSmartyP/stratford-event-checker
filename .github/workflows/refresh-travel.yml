@@ -1,0 +1,48 @@
+name: Refresh planned TfL travel notices
+on:
+  schedule:
+    - cron: "37 */6 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "travel-core.js"
+      - "travel.js"
+      - "scripts/update_travel.cjs"
+      - "tests/test_travel.cjs"
+      - ".github/workflows/refresh-travel.yml"
+permissions:
+  contents: write
+concurrency:
+  group: stratford-calendar-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Test travel matching and fallbacks
+        run: node --test tests/test_travel.cjs
+      - name: Refresh and publish planned notices
+        env:
+          TFL_APP_KEY: ${{ secrets.TFL_APP_KEY }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            node scripts/update_travel.cjs
+            if git diff --quiet -- travel-data.json && git ls-files --error-unmatch travel-data.json >/dev/null 2>&1; then
+              exit 0
+            fi
+            git add travel-data.json
+            git commit -m "Refresh planned Stratford travel notices"
+            if git push origin HEAD:main; then exit 0; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            git fetch origin main
+            git reset --hard origin/main
+          done

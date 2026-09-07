@@ -210,10 +210,12 @@
           ${performance.note ? `<div class="special-note">${esc(performance.note)}</div>` : ''}
           ${needsReview ? '<div class="review-note">This performance disappeared from a recent live check and should be confirmed on the official ticket page.</div>' : ''}
           ${stadiumMarkup(events)}
+          <div class="planned-travel" data-travel-date="${esc(performance.date)}" aria-label="Planned travel disruptions" hidden></div>
         </div>`;
 
       schedule.appendChild(row);
     });
+    document.dispatchEvent(new Event('calendar-rendered'));
   }
 
   prevButton.addEventListener('click', () => {

@@ -46,7 +46,19 @@
       </section>
 
       <section id="summary" class="summary-card" aria-live="polite"></section>
+      <p id="plannedTravelStatus" class="travel-check">Planned travel notices: checking for updates…</p>
       <section id="schedule" class="schedule-list" aria-label="Phantom Peak performances"></section>
+
+      <section class="travel-panel" aria-labelledby="travelHeading">
+        <h2 id="travelHeading">Getting to Westfield Stratford City</h2>
+        <p>Current travel status · conditions now, not a forecast for your visit date.</p>
+        <div id="currentTravel" aria-live="polite"></div>
+        <div class="source-links">
+          <a href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener noreferrer">Plan journey with TfL ↗</a>
+          <a href="https://tfl.gov.uk/tube-dlr-overground/status/" target="_blank" rel="noopener noreferrer">TfL status ↗</a>
+        </div>
+        <p class="travel-check">Powered by TfL Open Data. Check again before travelling.</p>
+      </section>
 
       <footer class="footer">
         <div class="footer-status">
@@ -64,5 +76,7 @@
 
   <script src="schedule-data.js"></script>
   <script src="app.js"></script>
+  <script src="travel-core.js"></script>
+  <script src="travel.js"></script>
 </body>
 </html>

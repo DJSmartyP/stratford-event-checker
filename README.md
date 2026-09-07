@@ -15,6 +15,31 @@ The site covers **4 December 2026 to 28 February 2027** and opens on Phantom Pea
 
 ## Automatic updates
 
+### Travel to Westfield Stratford City
+
+The current-travel panel reads TfL Open Data when the page opens and every five
+minutes while visible, with a refresh on return to an overdue tab. It covers
+Central, Jubilee, Elizabeth line, DLR and Mildmay; Stratford station and both bus
+stations; Stratford International DLR and its bus stops. Bus route notices may
+describe disruptions elsewhere on routes serving Stratford. National Rail,
+Southeastern, parking, roads and shopping-centre access are not covered.
+
+The separate `refresh-travel.yml` workflow updates `travel-data.json` every six
+hours. Explicitly dated planned rail works and dated station/stop notices appear
+inside affected performance tiles. Undated bus messages and realtime rail delays
+are never projected onto future dates. Empty future results mean only that no
+matching notices were published, not that service is guaranteed. Dates and times
+are interpreted in Europe/London. Expand a notice for its affected section and
+times, or use the TfL links to plan a journey.
+
+Each feed has its own timestamp and failure status. Failed checks retain previous
+notices and show an unavailable/overdue warning; scheduled data over seven hours
+old is also flagged. Travel failures do not block calendar updates. Scheduled
+runs can optionally use a repository secret `TFL_APP_KEY`; the public browser
+requests use no key, so credentials are never published. Anonymous access and
+CORS were verified during development. TfL throttling or outages display as
+unavailable rather than an all-clear. Run `node --test tests/test_travel.cjs`.
+
 Each source refreshes independently. London Stadium HTTP failures get three
 attempts with 2- and 4-second back-off. If a source is unavailable (or Phantom
 Peak cannot verify a full-range scan), its known data is retained and the other

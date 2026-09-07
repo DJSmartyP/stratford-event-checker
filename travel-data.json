@@ -1,0 +1,81 @@
+{
+  "range": {
+    "start": "2026-12-04",
+    "end": "2027-02-28"
+  },
+  "attemptedAt": "2026-09-07T05:37:45.825Z",
+  "groups": [
+    {
+      "id": "rail",
+      "label": "Central, Jubilee, Elizabeth line, DLR and Mildmay",
+      "status": "success",
+      "checkedAt": "2026-09-07T05:37:45.825Z",
+      "error": null,
+      "notices": []
+    },
+    {
+      "id": "buses0",
+      "label": "Bus routes 104, 108, 158, 238, 241, 25, 257, 262, 276, 308, 339, 388, 425, 473, 678, 69",
+      "status": "success",
+      "checkedAt": "2026-09-07T05:37:45.825Z",
+      "error": null,
+      "notices": []
+    },
+    {
+      "id": "buses1",
+      "label": "Bus routes 86, 97, D8, N205, N25, N8, N86",
+      "status": "success",
+      "checkedAt": "2026-09-07T05:37:45.825Z",
+      "error": null,
+      "notices": []
+    },
+    {
+      "id": "stratford",
+      "label": "Stratford station and both bus stations",
+      "status": "success",
+      "checkedAt": "2026-09-07T05:37:45.825Z",
+      "error": null,
+      "notices": []
+    },
+    {
+      "id": "international",
+      "label": "Stratford International DLR",
+      "status": "success",
+      "checkedAt": "2026-09-07T05:37:45.825Z",
+      "error": null,
+      "notices": []
+    },
+    {
+      "id": "490002268YY",
+      "label": "Stratford International bus stop",
+      "status": "success",
+      "checkedAt": "2026-09-07T05:37:45.825Z",
+      "error": null,
+      "notices": []
+    },
+    {
+      "id": "490002268ZZ",
+      "label": "Stratford International bus stop",
+      "status": "success",
+      "checkedAt": "2026-09-07T05:37:45.825Z",
+      "error": null,
+      "notices": []
+    },
+    {
+      "id": "490018554C",
+      "label": "Stratford International bus stop",
+      "status": "success",
+      "checkedAt": "2026-09-07T05:37:45.825Z",
+      "error": null,
+      "notices": []
+    },
+    {
+      "id": "490018554E",
+      "label": "Stratford International bus stop",
+      "status": "success",
+      "checkedAt": "2026-09-07T05:37:45.825Z",
+      "error": null,
+      "notices": []
+    }
+  ]
+}
