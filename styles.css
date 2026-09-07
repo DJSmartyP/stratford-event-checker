@@ -836,3 +836,12 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--red); outline-o
 .travel-windrush { --travel-line: #ef7b10; }
 /* Keep local buses distinct from the expanded rail palette. */
 .travel-bus { --travel-line: #665075; }
+
+/* Full-width line-coloured notice headers, including when expanded. */
+.travel-notice { padding: 0; border: 1px solid var(--travel-line, #766583); }
+.travel-notice summary { padding: 14px; background: var(--travel-line, #766583); color: var(--travel-text, #fff); }
+.travel-notice p { margin: 12px 14px; }
+.travel-jubilee, .travel-circle, .travel-dlr, .travel-hammersmith-city,
+.travel-victoria, .travel-waterloo-city, .travel-lioness,
+.travel-suffragette, .travel-windrush { --travel-text: #111; }
+.travel-notice summary:focus-visible { outline: 3px solid #111; outline-offset: 3px; }

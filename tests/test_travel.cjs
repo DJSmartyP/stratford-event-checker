@@ -64,3 +64,16 @@ test('live rail covers the whole network while planned checks remain local', asy
   assert.ok(urls.some(url=>url.includes('/Line/Mode/tube,overground,elizabeth-line,dlr/Status')));
   assert.equal(urls.filter(url=>url.includes('/Disruption') && url.includes('/Line/')).length,2);
 });
+
+test('bus titles identify local routes without mistaking dates or postcodes for routes',()=>{
+  const notices=t.busNotices([
+    {description:'ROYAL CREST AVENUE, E16: ROUTE 241 is terminating early.'},
+    {description:'Until 23:00 Thursday 31 December 2026, routes 276 and N25 are diverted.'},
+    {description:'Road blocked',affectedRoutes:[{lineId:'108'}]},
+    {description:'Roadworks until 25 December at E13'}
+  ],false);
+  assert.match(notices[0].title,/Bus 241/);
+  assert.match(notices[1].title,/Bus 276, N25/);
+  assert.match(notices[2].title,/Bus 108/);
+  assert.equal(notices[3].title,'Local bus disruption');
+});

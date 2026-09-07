@@ -59,7 +59,13 @@
       if (planned && (d.category !== 'PlannedWork' || !dates.start)) return [];
       // The bus API often supplies no validity dates. Such notices are current
       // only and are never assigned to a future performance tile.
-      return [{ service: 'bus', title: 'Bus route disruption', detail: d.description,
+      const routes = [...new Set([
+        ...(d.affectedRoutes || []).map(r=>String(r.lineId || r.routeId || '').toLowerCase()),
+        ...[...d.description.matchAll(/\broutes?\s+([a-z]?\d+(?:(?:\s*,\s*|\s+and\s+|\s*&\s*|\s*\/\s*)[a-z]?\d+)*)/gi)]
+          .flatMap(m=>m[1].match(/[a-z]?\d+/gi) || []).map(r=>r.toLowerCase())
+      ])].filter(r=>BUSES.includes(r)).map(r=>r.toUpperCase());
+      const title = routes.length ? `Bus ${routes.join(', ')} \u00b7 Disruption` : 'Local bus disruption';
+      return [{ service: 'bus', title, detail: d.description,
         scope: 'Route serving Stratford; disruption may be elsewhere on the route', ...dates }];
     });
   }
