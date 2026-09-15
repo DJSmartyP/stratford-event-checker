@@ -3,13 +3,13 @@
     "start": "2026-12-04",
     "end": "2027-02-28"
   },
-  "attemptedAt": "2026-09-14T21:59:00.596Z",
+  "attemptedAt": "2026-09-15T05:13:27.596Z",
   "groups": [
     {
       "id": "rail",
       "label": "Central, Jubilee, Elizabeth line, DLR and Mildmay",
       "status": "success",
-      "checkedAt": "2026-09-14T21:59:00.596Z",
+      "checkedAt": "2026-09-15T05:13:27.596Z",
       "error": null,
       "notices": []
     },
@@ -17,7 +17,7 @@
       "id": "buses0",
       "label": "Bus routes 104, 108, 158, 238, 241, 25, 257, 262, 276, 308, 339, 388, 425, 473, 678, 69",
       "status": "success",
-      "checkedAt": "2026-09-14T21:59:00.596Z",
+      "checkedAt": "2026-09-15T05:13:27.596Z",
       "error": null,
       "notices": []
     },
@@ -25,7 +25,7 @@
       "id": "buses1",
       "label": "Bus routes 86, 97, D8, N205, N25, N8, N86",
       "status": "success",
-      "checkedAt": "2026-09-14T21:59:00.596Z",
+      "checkedAt": "2026-09-15T05:13:27.596Z",
       "error": null,
       "notices": []
     },
@@ -33,29 +33,43 @@
       "id": "stratford",
       "label": "Stratford station and both bus stations",
       "status": "success",
-      "checkedAt": "2026-09-14T21:59:00.596Z",
+      "checkedAt": "2026-09-15T05:13:27.596Z",
       "error": null,
       "notices": [
+        {
+          "title": "Stratford Bus Station",
+          "detail": "Bus Stop Closed\\n    Owing to a football match\\n      Please see tfl.gov.uk\\n        for more details",
+          "scope": "Station or stop notice",
+          "start": "2026-09-15T15:45:00.000Z",
+          "end": "2026-09-20T23:45:00.000Z"
+        },
         {
           "title": "Stratford (London) Rail Station",
           "detail": "MILDMAY LINE: Monday 14 and Tuesday 15 September, the 2147 Clapham Junction to Stratford train will not run. The 2203 and 2234 Clapham Junction to Stratford trains terminate at Willesden Junction. The 2148 and 2249 trains from Richmond to Stratford will terminate at Willesden Junction.The 2300 train from Stratford to Richmond will not run",
           "scope": "reducedService",
-          "start": "2026-09-14T20:45:00.000Z",
-          "end": "2026-09-14T22:45:00.000Z"
+          "start": "2026-09-15T20:45:00.000Z",
+          "end": "2026-09-15T22:45:00.000Z"
         },
         {
           "title": "Stratford (London) Rail Station",
           "detail": "MILDMAY LINE: Monday 14, Tuesday 15, Wednesday 16 and Thursday 17 September, after 2345 each evening, no service westbound from Stratford to Camden Road after 2345. The 2359 and 0015 services from Stratford will start from Camden Road at 0018 and 0035. Customers should use the last westbound service from Stratford at 2344, or local bus routes 30, 274, 388, 393 or 488.",
           "scope": "partClosure",
-          "start": "2026-09-14T22:45:00.000Z",
-          "end": "2026-09-14T22:59:00.000Z"
+          "start": "2026-09-15T22:45:00.000Z",
+          "end": "2026-09-15T22:59:00.000Z"
         },
         {
           "title": "Stratford (London) Rail Station",
           "detail": "MILDMAY LINE: Monday 14, Tuesday 15, Wednesday 16 and Thursday 17 September, after 2345 each evening, no service westbound from Stratford to Camden Road after 2345. The 2359 and 0015 services from Stratford will start from Camden Road at 0018 and 0035. Customers should use the last westbound service from Stratford at 2344, or local bus routes 30, 274, 388, 393 or 488.",
           "scope": "partClosure",
-          "start": "2026-09-14T23:00:00.000Z",
-          "end": "2026-09-15T00:29:00.000Z"
+          "start": "2026-09-15T23:00:00.000Z",
+          "end": "2026-09-16T00:29:00.000Z"
+        },
+        {
+          "title": "Stratford (London) Rail Station",
+          "detail": "MILDMAY LINE: Tuesday 15 and Wednesday 16 September, the 0705 train from Stratford to Richmond will start from Dalston Kingsland at 0718",
+          "scope": "reducedService",
+          "start": "2026-09-15T06:04:00.000Z",
+          "end": "2026-09-15T06:20:00.000Z"
         }
       ]
     },
@@ -63,7 +77,7 @@
       "id": "international",
       "label": "Stratford International DLR",
       "status": "success",
-      "checkedAt": "2026-09-14T21:59:00.596Z",
+      "checkedAt": "2026-09-15T05:13:27.596Z",
       "error": null,
       "notices": []
     },
@@ -71,7 +85,7 @@
       "id": "490002268YY",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-09-14T21:59:00.596Z",
+      "checkedAt": "2026-09-15T05:13:27.596Z",
       "error": null,
       "notices": []
     },
@@ -79,7 +93,7 @@
       "id": "490002268ZZ",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-09-14T21:59:00.596Z",
+      "checkedAt": "2026-09-15T05:13:27.596Z",
       "error": null,
       "notices": []
     },
@@ -87,7 +101,7 @@
       "id": "490018554C",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-09-14T21:59:00.596Z",
+      "checkedAt": "2026-09-15T05:13:27.596Z",
       "error": null,
       "notices": []
     },
@@ -95,7 +109,7 @@
       "id": "490018554E",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-09-14T21:59:00.596Z",
+      "checkedAt": "2026-09-15T05:13:27.596Z",
       "error": null,
       "notices": []
     }
