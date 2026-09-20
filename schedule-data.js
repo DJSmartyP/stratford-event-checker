@@ -463,8 +463,8 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-20T16:10:37.972737+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-20T16:10:42.747462+00:00",
+      "lastAttemptAt": "2026-09-20T20:51:35.932032+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-20T20:51:39.807990+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     }
@@ -524,8 +524,8 @@ window.CALENDAR_DATA = {
     ],
     "refresh": {
       "status": "success",
-      "lastAttemptAt": "2026-09-20T16:10:36.939768+00:00",
-      "lastSuccessfulRefreshAt": "2026-09-20T16:10:37.972719+00:00",
+      "lastAttemptAt": "2026-09-20T20:51:34.879285+00:00",
+      "lastSuccessfulRefreshAt": "2026-09-20T20:51:35.932011+00:00",
       "monitoringStartedAt": "2026-09-06T11:41:21.704852+00:00",
       "error": null
     },
