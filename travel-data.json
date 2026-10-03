@@ -3,13 +3,13 @@
     "start": "2026-12-04",
     "end": "2027-02-28"
   },
-  "attemptedAt": "2026-10-02T22:29:52.994Z",
+  "attemptedAt": "2026-10-03T05:39:45.858Z",
   "groups": [
     {
       "id": "rail",
       "label": "Central, Jubilee, Elizabeth line, DLR and Mildmay",
       "status": "success",
-      "checkedAt": "2026-10-02T22:29:52.994Z",
+      "checkedAt": "2026-10-03T05:39:45.858Z",
       "error": null,
       "notices": []
     },
@@ -17,7 +17,7 @@
       "id": "buses0",
       "label": "Bus routes 104, 108, 158, 238, 241, 25, 257, 262, 276, 308, 339, 388, 425, 473, 678, 69",
       "status": "success",
-      "checkedAt": "2026-10-02T22:29:52.994Z",
+      "checkedAt": "2026-10-03T05:39:45.858Z",
       "error": null,
       "notices": []
     },
@@ -25,7 +25,7 @@
       "id": "buses1",
       "label": "Bus routes 86, 97, D8, N205, N25, N8, N86",
       "status": "success",
-      "checkedAt": "2026-10-02T22:29:52.994Z",
+      "checkedAt": "2026-10-03T05:39:45.858Z",
       "error": null,
       "notices": []
     },
@@ -33,15 +33,23 @@
       "id": "stratford",
       "label": "Stratford station and both bus stations",
       "status": "success",
-      "checkedAt": "2026-10-02T22:29:52.994Z",
+      "checkedAt": "2026-10-03T05:39:45.858Z",
       "error": null,
-      "notices": []
+      "notices": [
+        {
+          "title": "Stratford (London) Rail Station",
+          "detail": "MILDMAY LINE: Saturday 3 October, the 2104 and 2234 Clapham Junction to Stratford trains will terminate at Willesden Junction. The 2319 Clapham Junction to Willesden Junction train will not run.",
+          "scope": "Station or stop notice",
+          "start": "2026-10-03T20:00:00.000Z",
+          "end": "2026-10-03T22:35:00.000Z"
+        }
+      ]
     },
     {
       "id": "international",
       "label": "Stratford International DLR",
       "status": "success",
-      "checkedAt": "2026-10-02T22:29:52.994Z",
+      "checkedAt": "2026-10-03T05:39:45.858Z",
       "error": null,
       "notices": []
     },
@@ -49,7 +57,7 @@
       "id": "490002268YY",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-10-02T22:29:52.994Z",
+      "checkedAt": "2026-10-03T05:39:45.858Z",
       "error": null,
       "notices": []
     },
@@ -57,7 +65,7 @@
       "id": "490002268ZZ",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-10-02T22:29:52.994Z",
+      "checkedAt": "2026-10-03T05:39:45.858Z",
       "error": null,
       "notices": []
     },
@@ -65,7 +73,7 @@
       "id": "490018554C",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-10-02T22:29:52.994Z",
+      "checkedAt": "2026-10-03T05:39:45.858Z",
       "error": null,
       "notices": []
     },
@@ -73,7 +81,7 @@
       "id": "490018554E",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-10-02T22:29:52.994Z",
+      "checkedAt": "2026-10-03T05:39:45.858Z",
       "error": null,
       "notices": []
     }
