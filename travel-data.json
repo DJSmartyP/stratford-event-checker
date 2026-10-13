@@ -3,13 +3,13 @@
     "start": "2026-12-04",
     "end": "2027-02-28"
   },
-  "attemptedAt": "2026-10-13T00:56:03.529Z",
+  "attemptedAt": "2026-10-13T14:31:11.361Z",
   "groups": [
     {
       "id": "rail",
       "label": "Central, Jubilee, Elizabeth line, DLR and Mildmay",
       "status": "success",
-      "checkedAt": "2026-10-13T00:56:03.529Z",
+      "checkedAt": "2026-10-13T14:31:11.361Z",
       "error": null,
       "notices": []
     },
@@ -17,7 +17,7 @@
       "id": "buses0",
       "label": "Bus routes 104, 108, 158, 238, 241, 25, 257, 262, 276, 308, 339, 388, 425, 473, 678, 69",
       "status": "success",
-      "checkedAt": "2026-10-13T00:56:03.529Z",
+      "checkedAt": "2026-10-13T14:31:11.361Z",
       "error": null,
       "notices": []
     },
@@ -25,7 +25,7 @@
       "id": "buses1",
       "label": "Bus routes 86, 97, D8, N205, N25, N8, N86",
       "status": "success",
-      "checkedAt": "2026-10-13T00:56:03.529Z",
+      "checkedAt": "2026-10-13T14:31:11.361Z",
       "error": null,
       "notices": []
     },
@@ -33,15 +33,23 @@
       "id": "stratford",
       "label": "Stratford station and both bus stations",
       "status": "success",
-      "checkedAt": "2026-10-13T00:56:03.529Z",
+      "checkedAt": "2026-10-13T14:31:11.361Z",
       "error": null,
-      "notices": []
+      "notices": [
+        {
+          "title": "Stratford Underground Station",
+          "detail": "Central Line: Severe delays between North Acton and Ealing Broadway/West Ruislip and between Leytonstone and Epping/Hainault via Newbury Park due to train cancellations. Tickets are being accepted on London Buses, Liberty line, Chiltern Railways and Great Western Railway. MINOR DELAYS on the rest of the line. ",
+          "scope": "Station or stop notice",
+          "start": "2026-10-13T14:17:00.000Z",
+          "end": "2026-10-14T00:29:00.000Z"
+        }
+      ]
     },
     {
       "id": "international",
       "label": "Stratford International DLR",
       "status": "success",
-      "checkedAt": "2026-10-13T00:56:03.529Z",
+      "checkedAt": "2026-10-13T14:31:11.361Z",
       "error": null,
       "notices": []
     },
@@ -49,7 +57,7 @@
       "id": "490002268YY",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-10-13T00:56:03.529Z",
+      "checkedAt": "2026-10-13T14:31:11.361Z",
       "error": null,
       "notices": []
     },
@@ -57,7 +65,7 @@
       "id": "490002268ZZ",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-10-13T00:56:03.529Z",
+      "checkedAt": "2026-10-13T14:31:11.361Z",
       "error": null,
       "notices": []
     },
@@ -65,7 +73,7 @@
       "id": "490018554C",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-10-13T00:56:03.529Z",
+      "checkedAt": "2026-10-13T14:31:11.361Z",
       "error": null,
       "notices": []
     },
@@ -73,7 +81,7 @@
       "id": "490018554E",
       "label": "Stratford International bus stop",
       "status": "success",
-      "checkedAt": "2026-10-13T00:56:03.529Z",
+      "checkedAt": "2026-10-13T14:31:11.361Z",
       "error": null,
       "notices": []
     }
